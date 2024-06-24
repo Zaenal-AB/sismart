@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'sismart');
+$conn = mysqli_connect('localhost', 'u966478672_sismart', 'Zaenal!7', 'u966478672_sismart');
 
 // check connetion
 // if ($conn) {
