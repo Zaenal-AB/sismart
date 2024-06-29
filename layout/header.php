@@ -121,7 +121,7 @@
                 </div>
 
                 <!-- SidebarSearch Form -->
-                <div class="form-inline">
+                <!-- <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
                         <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
@@ -130,7 +130,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -164,27 +164,50 @@
                                 <p>Tasmi'</p>
                             </a>
                         </li>
+                        <!-- / END SIDEBAR AL QUR'AN -->
 
+                        <!-- START SIDEBAR REWARD & PUNISHMENT -->
+
+                        <li class="nav-header">Penghargaan & Pembinaan</li>
+                        <li class="nav-item">
+                            <a href="data-penghargaan.php" class="nav-link">
+                                <i class="nav-icon far fa-solid fa-award"></i>
+                                <p> Penghargaan</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-shapes"></i>
+                                <p> Pembinaan
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="data-keterlambatan.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Keterlambatan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="data-point-siswa.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rekap Point Siswa</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- / END REWARD AND PUNISHMENT -->
 
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">
                             <a href="data-akun.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-user-gear"></i>
-                                <p> Data Akun</p>
+                                <p> Pengaturan Akun</p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="data-guru.php" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
-                                <p> Data Guru</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="data-siswa.php" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
-                                <p> Data Siswa</p>
-                            </a>
-                        </li> -->
+
                         <br>
                         <br>
                         <li class="nav-item">
