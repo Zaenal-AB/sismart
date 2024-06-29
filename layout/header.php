@@ -141,26 +141,26 @@
                         <li class="nav-header">Al-Qur'an</li>
                         <li class="nav-item">
                             <a href="dashboard.php" class="nav-link">
-                                <i class="nav-icon far fa-calendar-alt"></i>
+                                <i class="nav-icon far fa-solid fa-house"></i>
                                 <p> Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="data-tahsin.php" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon far fa-solid fa-book-open-reader"></i>
                                 <p> Tahsin </p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="data-ziyadah.php" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon far fa-solid fa-file-circle-plus"></i>
                                 <p> Ziyadah </p>
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
                             <a href="data-tasmi.php" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon far fa-solid fa-clipboard-list"></i>
                                 <p>Tasmi'</p>
                             </a>
                         </li>
@@ -169,7 +169,7 @@
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">
                             <a href="data-akun.php" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                                <i class="nav-icon far fa-solid fa-user-circle"></i>
                                 <p> Data Akun</p>
                             </a>
                         </li>
@@ -189,7 +189,7 @@
                         <br>
                         <li class="nav-item">
                             <a href="logout.php" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                                <i class="nav-icon far fa-solid fa-right-from-bracket"></i>
                                 <p>Logout</p>
                             </a>
                         </li>

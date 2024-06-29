@@ -34,6 +34,8 @@
     <!-- AdminLTE App -->
     <script src="assets/admin/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
+    <!-- ICON  -->
+    <script src="https://kit.fontawesome.com/b28b8dbd18.js" crossorigin="anonymous"></script>
     <!-- <script src="assets/admin/dist/js/demo.js"></script> -->
     <!-- Page specific script -->
     <script>
