@@ -95,7 +95,7 @@ if (isset($_POST['ubah'])) {
                         <!-- /.card-header -->
                         <div class="card-body">
                             <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
-                                <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin">Tambah Catatan</button>
+                                <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
                             <?php endif; ?>
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
@@ -124,8 +124,8 @@ if (isset($_POST['ubah'])) {
                                                 <td><?= $tahsin['catatan']; ?></td>
                                                 <td class="text-center"><?= $tahsin['keterangan']; ?></td>
                                                 <td class="text-center">
-                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahTahsin<?= $tahsin['id']; ?>">Ubah</button>
-                                                    <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusTahsin<?= $tahsin['id']; ?>">Hapus</button>
+                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Ubah</button>
+                                                    <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

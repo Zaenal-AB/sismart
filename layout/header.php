@@ -169,7 +169,7 @@
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">
                             <a href="data-akun.php" class="nav-link">
-                                <i class="nav-icon far fa-solid fa-user-circle"></i>
+                                <i class="nav-icon far fa-solid fa-user-gear"></i>
                                 <p> Data Akun</p>
                             </a>
                         </li>
