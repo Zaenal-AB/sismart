@@ -23,6 +23,33 @@ $data_siswa = select("SELECT * FROM data_siswa");
 //tampil data sebagian 
 $data_bylogin = select("SELECT * FROM data_keterlambatan WHERE nama = '{$_SESSION['nama']}' ORDER BY `data_keterlambatan`.`id` DESC");
 
+//jika tombok tambah keterlambatan, jalankan script berikut
+if (isset($_POST['tambah'])) {
+    if (create_keterlambatan($_POST) > 0) {
+        echo "<script> alert('Catatan Keterlambatan Berhasil Ditambahkan')
+        document.location.href = 'data-keterlambatan.php';
+        </script>";
+    } else {
+        echo "<script> alert('Catatan keterlambatan Gagal Ditambahkan')
+        document.location.href = 'data-keterlambatan.php';
+        </script>";
+    }
+}
+
+
+//UBAH DATA di tekan, jalan script berikut 
+if (isset($_POST['ubah'])) {
+    if (ubah_keterlambatan($_POST) > 0) {
+        echo "<script> alert('Data Keterlambatan Berhasil Diubah')
+        document.location.href = 'data-keterlambatan.php';
+        </script>";
+    } else {
+        echo "<script> alert('Data Keterlambatan Gagal diubah')
+        document.location.href = 'data-keterlambatan.php';
+
+        </script>";
+    }
+}
 
 ?>
 
@@ -171,6 +198,73 @@ $data_bylogin = select("SELECT * FROM data_keterlambatan WHERE nama = '{$_SESSIO
         </div>
     </div>
 </div>
+
+
+<!-- Modal Hapus Keterlambatan -->
+<?php foreach ($data_keterlambatan as $keterlambatan) : ?>
+    <div class="modal fade" id="HapusKeterlambatan<?= $keterlambatan['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus Catatan Keterlambatan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Yakin Ingin Menghapus Data Keterlambatan <?= $keterlambatan['nama']; ?> ? </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                    <a href="hapus-keterlambatan.php?id=<?= $keterlambatan['id']; ?>" class="btn btn-danger">Hapus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+
+<!-- Modal Ubah Keterlambatan  -->
+<?php foreach ($data_keterlambatan as $keterlambatan) : ?>
+    <div class="modal fade" id="UbahKeterlambatan<?= $keterlambatan['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Keterlambatan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <input type="hidden" name="id" value="<?= $keterlambatan['id'] ?>">
+
+                        <label for="nama">Nama Siswa</label>
+                        <select data-live-search="true" type="text" class="form-control  mb-1" id="nama" name="nama" value="<?= $keterlambatan['nama']; ?>" required>
+                            <option value="<?= $keterlambatan['nama']; ?>"><?= $keterlambatan['nama']; ?></option>
+                            <?php foreach ($data_siswa as $siswa) : ?>
+                                <option value="<?= $siswa['nama']; ?>"><?= $siswa['nama']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+
+                        <label for="alasan">Alsan Keterlambatan</label>
+                        <textarea class="form-control" placeholder="Alasan Keterlambatan..." id="alasan" name="alasan" style="height: 120px"><?= $keterlambatan['alasan']; ?></textarea>
+
+                        <label for="tindakan">Tindakan</label>
+                        <textarea class="form-control" placeholder="Tindakan Keterlambatan..." id="tindakan" name="tindakan" style="height: 120px"><?= $keterlambatan['tindakan']; ?></textarea>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                            <button type="submit" name="ubah" class="btn btn-primary">Ubah Keterlambatan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
 
 <?php
 include 'layout/footer.php';

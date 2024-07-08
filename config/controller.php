@@ -16,7 +16,6 @@ function select($query)
 }
 
 
-
 // ================ BAGIAN DATA AKUN SISWA ========================= //
 
 //fungsi menambahkan akun
@@ -330,6 +329,51 @@ function ubah_akun($post)
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $query      = "UPDATE data_akun SET nama='$nama', nis='$nis', username='$username',password='$password', level='$level' WHERE id = '$id'";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+// ================ BAGIAN DATA KETERLAMBATAN ========================= //
+
+//fungsi menambahkan keterlambatan
+function create_keterlambatan($post)
+{
+    global $conn;
+
+    $nama           = htmlspecialchars($post['nama']);
+    $alasan         = htmlspecialchars($post['alasan']);
+    $tindakan       = htmlspecialchars($post['tindakan']);
+
+    $query      = "INSERT INTO data_keterlambatan VALUES (null, null, '$nama', '$alasan', '$tindakan')";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+//fungsi menghapus keterlambatan
+function delete_keterlambatan($id)
+{
+    global $conn;
+
+    $query = "DELETE FROM data_keterlambatan WHERE id = $id";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+//fungsi meng-ubah keterlambatan
+function ubah_keterlambatan($post)
+{
+    global $conn;
+
+    $id         = htmlspecialchars($post['id']);
+    $nama       = htmlspecialchars($post['nama']);
+    $alasan     = htmlspecialchars($post['alasan']);
+    $tindakan   = htmlspecialchars($post['tindakan']);
+
+
+    $query      = "UPDATE data_keterlambatan SET nama='$nama', alasan='$alasan', tindakan='$tindakan' WHERE id = '$id'";
 
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
