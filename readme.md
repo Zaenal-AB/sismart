@@ -1,3 +1,4 @@
-code sistem data smpit anak sholeh mataram
+//ADD DI WEB
 
-scekarang coba kita edit bagian readme
+1.  Tambahkan Database di keterlambatan
+2.  tambahkan colom 'guru' pada db tabel tahsin

@@ -88,8 +88,9 @@ function create_tahsin($post)
     $kelas          = htmlspecialchars($post['kelas']);
     $catatan        = htmlspecialchars($post['catatan']);
     $keterangan     = htmlspecialchars($post['keterangan']);
+    $guru           = htmlspecialchars($post['guru']);
 
-    $query      = "INSERT INTO data_tahsin VALUES (null, null, '$nama', '$kelas', '$catatan', '$keterangan')";
+    $query      = "INSERT INTO data_tahsin VALUES (null, null, '$nama', '$kelas', '$catatan', '$keterangan', '$guru')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -118,7 +119,7 @@ function ubah_tahsin($post)
     $keterangan = htmlspecialchars($post['keterangan']);
 
 
-    $query      = "UPDATE data_tahsin SET nama='$nama', kelas='$kelas', catatan='$catatan', keterangan='$keterangan' WHERE id = '$id'";
+    $query      = "UPDATE data_tahsin SET nama='$nama', kelas='$kelas', catatan='$catatan', keterangan='$keterangan'WHERE id = '$id'";
 
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);

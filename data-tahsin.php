@@ -25,6 +25,7 @@ $data_kelas = select("SELECT * FROM data_kelas");
 
 //tampil data sebagian 
 $data_bylogin = select("SELECT * FROM data_tahsin WHERE nama = '{$_SESSION['nama']}' ORDER BY `data_tahsin`.`id` DESC");
+$data_byguru = select("SELECT * FROM data_tahsin WHERE guru = '{$_SESSION['nama']}' ORDER BY `data_tahsin`.`id` DESC");
 
 //jika tombok tambah tahsin, jalankan script berikut
 if (isset($_POST['tambah'])) {
@@ -121,6 +122,9 @@ if (isset($_POST['ubah'])) {
                                         <th class="text-center">Catatan Tahsin</th>
                                         <th class="text-center">Keterangan</th>
                                         <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                                            <th class="text-center">Pembimbing</th>
+                                        <?php endif; ?>
+                                        <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                             <th class="text-center">Aksi </th>
                                         <?php endif; ?>
                                     </tr>
@@ -128,7 +132,7 @@ if (isset($_POST['ubah'])) {
                                 <tbody>
                                     <?php $no = 1; ?>
                                     <!-- Menampilkan seluruh data  -->
-                                    <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                                    <?php if ($_SESSION['level'] == 3) : ?>
                                         <?php foreach ($data_tahsin as $tahsin) : ?>
                                             <tr>
                                                 <td class="text-center"><?= $no++; ?></td>
@@ -137,12 +141,31 @@ if (isset($_POST['ubah'])) {
                                                 <td class="text-center"><?= $tahsin['kelas']; ?></td>
                                                 <td><?= $tahsin['catatan']; ?></td>
                                                 <td class="text-center"><?= $tahsin['keterangan']; ?></td>
+                                                <td class="text-center"><?= $tahsin['guru']; ?></td>
                                                 <td class="text-center">
                                                     <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Ubah</button>
                                                     <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
+                                        <!-- Menampilkan seluruh sebagian/siswa  -->
+                                    <?php elseif ($_SESSION['level'] == 2) : ?>
+                                        <?php foreach ($data_byguru as $tahsin) : ?>
+                                            <tr>
+                                                <td class="text-center"><?= $no++; ?></td>
+                                                <td class="text-center" id="tanggal1"><?= date('d/m/Y | H:i', strtotime($tahsin['tanggal'])); ?></td>
+                                                <td><?= $tahsin['nama']; ?></td>
+                                                <td class="text-center"><?= $tahsin['kelas']; ?></td>
+                                                <td><?= $tahsin['catatan']; ?></td>
+                                                <td class="text-center"><?= $tahsin['keterangan']; ?></td>
+                                                <td class="text-center"><?= $tahsin['guru']; ?></td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-pen-to-square"></i> Ubah</button>
+                                                    <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-trash"></i> Hapus</button>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+
                                     <?php else : ?>
                                         <?php foreach ($data_bylogin as $tahsin) : ?>
                                             <tr>
@@ -203,6 +226,8 @@ if (isset($_POST['ubah'])) {
                         <option value="Setor">Setor</option>
                         <option value="Tidak Setor">Tidak Setor</option>
                     </select>
+
+                    <input type="hidden" name="guru" value="<?= ($_SESSION['nama']) ?>">
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>

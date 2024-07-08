@@ -225,16 +225,16 @@ if (isset($_POST['ubah'])) {
                     <form action="" method="post">
                         <input type="hidden" name="id" value="<?= $akun['id'] ?>">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $akun['nama']; ?>" required>
+                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $akun['nama']; ?>" required disabled>
 
                         <div class="row mb-2">
                             <div class="col">
                                 <label for="nis">NIS</label>
-                                <input type="text" class="form-control" id="nis" name="nis" value="<?= $akun['nis']; ?>" required>
+                                <input type="text" class="form-control" id="nis" name="nis" value="<?= $akun['nis']; ?>" required disabled>
                             </div>
                             <div class="col">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" value="<?= $akun['username']; ?>" required>
+                                <input type="text" class="form-control" id="username" name="username" value="<?= $akun['username']; ?>" required disabled>
                             </div>
                         </div>
 
