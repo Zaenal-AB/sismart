@@ -94,10 +94,24 @@ if (isset($_POST['ubah'])) {
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
-                                <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
-                            <?php endif; ?>
-                            <table id="example1" class="table table-bordered table-striped">
+
+                            <div class="row">
+                                <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                                    <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
+                                <?php endif; ?>
+
+                                <div class="col">
+                                    <form action="" method="post" class="form-inline">
+                                        <input type="date" name="tgl_mulai" class="form-control ml-3">
+                                        <input type="date" name="tgl_akhir" class="form-control ml-3">
+                                        <button type="submit" name="filter_tgl" class="btn btn-info ml-3">Filter</button>
+
+                                    </form>
+                                </div>
+
+                            </div>
+
+                            <table id="example1" class="table table-bordered table-striped select2bs4 select2">
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
@@ -118,7 +132,7 @@ if (isset($_POST['ubah'])) {
                                         <?php foreach ($data_tahsin as $tahsin) : ?>
                                             <tr>
                                                 <td class="text-center"><?= $no++; ?></td>
-                                                <td class="text-center"><?= date('d/m/Y | H:i', strtotime($tahsin['tanggal'])); ?></td>
+                                                <td class="text-center" id="tanggal1"><?= date('d/m/Y | H:i', strtotime($tahsin['tanggal'])); ?></td>
                                                 <td><?= $tahsin['nama']; ?></td>
                                                 <td class="text-center"><?= $tahsin['kelas']; ?></td>
                                                 <td><?= $tahsin['catatan']; ?></td>

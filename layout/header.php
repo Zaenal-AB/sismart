@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/admin/dist/css/adminlte.min.css">
+   
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -186,7 +187,7 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="data-keterlambatan.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="nav-icon far fa-circle text-danger"></i>
                                         <p>Keterlambatan</p>
                                     </a>
                                 </li>
