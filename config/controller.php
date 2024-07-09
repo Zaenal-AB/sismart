@@ -379,3 +379,46 @@ function ubah_keterlambatan($post)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+
+// ================ BAGIAN DATA PRESTASI ========================= //
+
+//fungsi menambahkan prestasi
+function create_prestasi($post)
+{
+    global $conn;
+
+    $nama               = htmlspecialchars($post['nama']);
+    $prestasi           = htmlspecialchars($post['prestasi']);
+
+    $query      = "INSERT INTO data_prestasi VALUES (null, null, '$nama', '$prestasi')";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+//fungsi menghapus prestasi
+function delete_prestasi($id)
+{
+    global $conn;
+
+    $query = "DELETE FROM data_prestasi WHERE id = $id";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+//fungsi meng-ubah prestasi
+function ubah_prestasi($post)
+{
+    global $conn;
+
+    $id         = htmlspecialchars($post['id']);
+    $nama       = htmlspecialchars($post['nama']);
+    $prestasi   = htmlspecialchars($post['prestasi']);
+
+
+    $query      = "UPDATE data_prestasi SET nama='$nama', prestasi='$prestasi' WHERE id = '$id'";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}

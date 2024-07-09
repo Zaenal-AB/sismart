@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/admin/dist/css/adminlte.min.css">
-   
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -173,7 +173,7 @@
                         <li class="nav-item">
                             <a href="data-penghargaan.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-award"></i>
-                                <p> Penghargaan</p>
+                                <p>Prestasi</p>
                             </a>
                         </li>
 
