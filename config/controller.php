@@ -136,11 +136,12 @@ function create_ziyadah($post)
     $nama           = htmlspecialchars($post['nama']);
     $kelas          = htmlspecialchars($post['kelas']);
     $surat          = htmlspecialchars($post['surat']);
-    $ayat          = htmlspecialchars($post['ayat']);
+    $ayat           = htmlspecialchars($post['ayat']);
     $catatan        = htmlspecialchars($post['catatan']);
     $keterangan     = htmlspecialchars($post['keterangan']);
+    $guru           = htmlspecialchars($post['guru']);
 
-    $query      = "INSERT INTO data_ziyadah VALUES (null, null, '$nama', '$kelas','$surat','$ayat','$catatan', '$keterangan')";
+    $query      = "INSERT INTO data_ziyadah VALUES (null, null, '$nama', '$kelas','$surat','$ayat','$catatan', '$keterangan', '$guru')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }

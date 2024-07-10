@@ -27,6 +27,7 @@ $data_surat = select("SELECT * FROM data_surat");
 
 //tampil data sebagian 
 $data_bylogin = select("SELECT * FROM data_ziyadah WHERE nama = '{$_SESSION['nama']}' ORDER BY `data_ziyadah`.`id` DESC");
+$data_byguru = select("SELECT * FROM data_ziyadah WHERE guru = '{$_SESSION['nama']}' ORDER BY `data_ziyadah`.`id` DESC");
 
 
 
@@ -113,6 +114,7 @@ if (isset($_POST['ubah'])) {
                                         <th colspan="2" class="text-center align-middle">Ziyadah</th>
                                         <th rowspan="2" class="text-center align-middle">Catatan </th>
                                         <th rowspan="2" class="text-center align-middle">Ket</th>
+                                        <th rowspan="2" class="text-center align-middle">Pembimbing</th>
                                         <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                             <th rowspan="2" class="text-center align-middle">aksi</th>
                                         <?php endif; ?>
@@ -126,7 +128,7 @@ if (isset($_POST['ubah'])) {
                                 <tbody>
                                     <?php $no = 1; ?>
                                     <!-- menampilkan seluruh data -->
-                                    <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                                    <?php if ($_SESSION['level'] == 3) : ?>
                                         <?php foreach ($data_ziyadah as $ziyadah) : ?>
                                             <tr>
                                                 <td class="text-center align-middle"><?= $no++; ?></td>
@@ -137,12 +139,34 @@ if (isset($_POST['ubah'])) {
                                                 <td class="text-center"><?= $ziyadah['ayat']; ?></td>
                                                 <td><?= $ziyadah['catatan']; ?></td>
                                                 <td class="text-center"><?= $ziyadah['keterangan']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['guru']; ?></td>
                                                 <td class="text-center">
                                                     <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahZiyadah<?= $ziyadah['id']; ?>">Ubah</button>
                                                     <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusZiyadah<?= $ziyadah['id']; ?>">Hapus</button>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
+
+                                        <!-- Menampilkan seluruh sebagian/siswa  -->
+                                    <?php elseif ($_SESSION['level'] == 2) : ?>
+                                        <?php foreach ($data_byguru as $ziyadah) : ?>
+                                            <tr>
+                                                <td class="text-center align-middle"><?= $no++; ?></td>
+                                                <td class="text-center align-middle"><?= date('d/m/Y | H:i', strtotime($ziyadah['tanggal'])); ?></td>
+                                                <td class="text-center"><?= $ziyadah['nama']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['kelas']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['surat']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['ayat']; ?></td>
+                                                <td><?= $ziyadah['catatan']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['keterangan']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['guru']; ?></td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahZiyadah<?= $ziyadah['id']; ?>">Ubah</button>
+                                                    <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusZiyadah<?= $ziyadah['id']; ?>">Hapus</button>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+
                                     <?php else : ?>
                                         <?php foreach ($data_bylogin as $ziyadah) : ?>
                                             <tr>
@@ -154,6 +178,7 @@ if (isset($_POST['ubah'])) {
                                                 <td class="text-center"><?= $ziyadah['ayat']; ?></td>
                                                 <td><?= $ziyadah['catatan']; ?></td>
                                                 <td class="text-center"><?= $ziyadah['keterangan']; ?></td>
+                                                <td class="text-center"><?= $ziyadah['guru']; ?></td>
                                             </tr>
                                         <?php endforeach; ?>
 
@@ -228,6 +253,8 @@ if (isset($_POST['ubah'])) {
                     </div>
                     <label for="catatan">Catatan Ziyadah</label>
                     <textarea class="form-control" placeholder="Catatan ziyadah disini..." id="catatan" name="catatan" style="height: 200px"></textarea>
+
+                    <input type="hidden" name="guru" value="<?= ($_SESSION['nama']) ?>">
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
