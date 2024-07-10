@@ -121,9 +121,7 @@ if (isset($_POST['ubah'])) {
                                         <th class="text-center">Kelas</th>
                                         <th class="text-center">Catatan Tahsin</th>
                                         <th class="text-center">Keterangan</th>
-                                        <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
-                                            <th class="text-center">Pembimbing</th>
-                                        <?php endif; ?>
+                                        <th class="text-center">Pembimbing</th>
                                         <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                             <th class="text-center">Aksi </th>
                                         <?php endif; ?>
@@ -175,6 +173,7 @@ if (isset($_POST['ubah'])) {
                                                 <td class="text-center"><?= $tahsin['kelas']; ?></td>
                                                 <td><?= $tahsin['catatan']; ?></td>
                                                 <td class="text-center"><?= $tahsin['keterangan']; ?></td>
+                                                <td class="text-center"><?= $tahsin['guru']; ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php endif; ?>

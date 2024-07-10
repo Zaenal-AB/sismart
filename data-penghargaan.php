@@ -97,7 +97,7 @@ if (isset($_POST['ubah'])) {
                                 <?php endif; ?>
                             </div>
 
-                            <table id="example1" class="table table-bordered table-striped select2bs4 select2">
+                            <table id="example2" class="table table-bordered table-striped select2bs4 select2">
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
