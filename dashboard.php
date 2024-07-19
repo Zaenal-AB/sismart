@@ -35,143 +35,159 @@ include 'layout/header.php';
         </div><!-- /.container-fluid -->
     </section>
 
+    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <!-- Info boxes -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
 
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Grafik Pencapaian Hafalan Siswa</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Guru & Karyawan</span>
+                            <span class="info-box-number">
+                                30
+                            </span>
                         </div>
-                        <div class="card-body">
-                            <div class="chart">
-                                <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                            </div>
-                        </div>
-
                     </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
-
-                    <div class="card card-danger">
-                        <div class="card-header">
-                            <h3 class="card-title">Donut Chart</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Siswa</span>
+                            <span class="info-box-number">208</span>
                         </div>
-                        <div class="card-body">
-                            <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-
                     </div>
-
-
-                    <div class="card card-danger">
-                        <div class="card-header">
-                            <h3 class="card-title">Pie Chart</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-
-                    </div>
-
                 </div>
 
-                <div class="col-md-6">
+                <div class="clearfix hidden-md-up"></div>
 
-                    <div class="card card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">Line Chart</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart">
-                                <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                            </div>
-                        </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
+                        <div class="info-box-content">
+                            <span class="info-box-text">Rombongan Kelas</span>
+                            <span class="info-box-number">10</span>
+                        </div>
                     </div>
-
-
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Bar Chart</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart">
-                                <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Stacked Bar Chart</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart">
-                                <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
 
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Setting</span>
+                            <span class="info-box-number">X</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
 
+    <!-- chat start -->
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+            <!-- DIRECT CHAT -->
+            <div class="card direct-chat direct-chat-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Pengumuman</h3>
+
+                    <div class="card-tools">
+                        <span title="3 New Messages" class="badge badge-primary">3</span>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
+                            <i class="fas fa-comments"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <!-- Conversations are loaded here -->
+                    <div class="direct-chat-messages">
+                        <!-- Message. Default to the left -->
+                        <div class="direct-chat-msg">
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-left">Ustadz H. Fitrah Saputra</span>
+                                <span class="direct-chat-timestamp float-right">19 Juli 2024 2:00 pm</span>
+                            </div>
+                            <!-- /.direct-chat-infos -->
+                            <img class="direct-chat-img" src="assets/img/logo-smpit.jpg" alt="message user image">
+                            <!-- /.direct-chat-img -->
+                            <div class="direct-chat-text">
+                                Selamat datang di Sistem Informasi Siswa SMART (SiSMART)
+                            </div>
+                            <!-- /.direct-chat-text -->
+                        </div>
+                        <!-- /.direct-chat-msg -->
+
+                        <!-- Message to the right -->
+                        <div class="direct-chat-msg right">
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-right">Ustadz Zaenal Abidin</span>
+                                <span class="direct-chat-timestamp float-left">19 Juli 2024 2:05 pm</span>
+                            </div>
+                            <!-- /.direct-chat-infos -->
+                            <img class="direct-chat-img" src="assets/img/logo-smpit.jpg" alt="message user image">
+                            <!-- /.direct-chat-img -->
+                            <div class="direct-chat-text">
+                                Tes cek sound
+                            </div>
+                            <!-- /.direct-chat-text -->
+                        </div>
+                        <!-- /.direct-chat-msg -->
+
+                        <!-- Message. Default to the left -->
+                        <div class="direct-chat-msg">
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-left">Ustadz Muzanni</span>
+                                <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                            </div>
+                            <!-- /.direct-chat-infos -->
+                            <img class="direct-chat-img" src="assets/img/logo-smpit.jpg" alt="message user image">
+                            <!-- /.direct-chat-img -->
+                            <div class="direct-chat-text">
+                                Tes dari Tim Qur'an
+                            </div>
+                            <!-- /.direct-chat-text -->
+                        </div>
+                        <!-- /.direct-chat-msg -->
+
+
+                    </div>
+                    <!--/.direct-chat-messages-->
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <form action="#" method="post">
+                        <div class="input-group">
+                            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                            <span class="input-group-append">
+                                <button type="button" class="btn btn-primary">Send</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-footer-->
+            </div>
+            <!--/.direct-chat -->
+        </section>
+    </div>
+    <!-- chat end -->
 
 </div>
 

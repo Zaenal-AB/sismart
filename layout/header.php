@@ -17,6 +17,13 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/admin/dist/css/adminlte.min.css">
 
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="assets/admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="assets/admin/plugins/summernote/summernote-bs4.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -105,7 +112,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="assets/admin/index3.html" class="brand-link">
-                <img src="assets/img/logo-smpit.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="assets/img/logo-smpit.jpg" alt="Logo SMPIT" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">SiSMART</span>
             </a>
 
@@ -165,6 +172,12 @@
                                 <p>Tasmi'</p>
                             </a>
                         </li>
+                        <!-- <li class="nav-item">
+                            <a href="laporan.php" class="nav-link">
+                                <i class="nav-icon far fa-solid fa-clipboard-list"></i>
+                                <p>Checklist</p>
+                            </a>
+                        </li> -->
                         <!-- / END SIDEBAR AL QUR'AN -->
 
                         <!-- START SIDEBAR REWARD & PUNISHMENT -->

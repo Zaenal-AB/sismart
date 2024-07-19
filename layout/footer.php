@@ -14,6 +14,10 @@
     </div>
     <!-- ./wrapper -->
 
+
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
     <!-- jQuery -->
     <script src="assets/admin/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -36,6 +40,15 @@
     <!-- ICON  -->
     <script src="https://kit.fontawesome.com/b28b8dbd18.js" crossorigin="anonymous"></script>
 
+
+
+    <!-- daterangepicker -->
+    <script src="assets/admin/plugins/moment/moment.min.js"></script>
+    <script src="assets/admin/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Summernote -->
+    <script src="assets/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
     <!-- Page specific cetak pdf/exel dll script -->
     <script>
