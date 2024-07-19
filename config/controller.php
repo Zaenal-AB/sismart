@@ -226,6 +226,54 @@ function ubah_tasmi($post)
     return mysqli_affected_rows($conn);
 }
 
+// ================ BAGIAN DATA MUROJAAH ========================= //
+
+//fungsi menambahkan murojaah
+function create_murojaah($post)
+{
+    global $conn;
+
+    $nama           = htmlspecialchars($post['nama']);
+    $kelas          = htmlspecialchars($post['kelas']);
+    $kelas          = htmlspecialchars($post['kelas']);
+    $juz            = htmlspecialchars($post['juz']);
+    $predikat       = htmlspecialchars($post['predikat']);
+
+
+    $query      = "INSERT INTO data_murojaah VALUES (null, null, '$nama', '$kelas','$juz','$predikat')";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+//fungsi menghapus murojaah
+function delete_murojaah($id)
+{
+    global $conn;
+
+    $query = "DELETE FROM data_murojaah WHERE id = $id";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+//fungsi meng-ubah murojaah
+function ubah_murojaah($post)
+{
+    global $conn;
+
+    $id             = htmlspecialchars($post['id']);
+    $nama           = htmlspecialchars($post['nama']);
+    $kelas          = htmlspecialchars($post['kelas']);
+    $juz            = htmlspecialchars($post['juz']);
+    $predikat       = htmlspecialchars($post['predikat']);
+
+
+
+    $query      = "UPDATE data_murojaah SET nama='$nama', kelas='$kelas', juz='$juz', predikat='$predikat' WHERE id = '$id'";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
 
 // ================ BAGIAN DATA GURU ========================= //
 
@@ -419,6 +467,47 @@ function ubah_prestasi($post)
 
 
     $query      = "UPDATE data_prestasi SET nama='$nama', prestasi='$prestasi' WHERE id = '$id'";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+// ================ BAGIAN DATA KELAS ========================= //
+
+//fungsi menambahkan prestasi
+function create_kelas($post)
+{
+    global $conn;
+
+    $kelas           = htmlspecialchars($post['kelas']);
+    $js             = htmlspecialchars($post['js']);
+
+    $query      = "INSERT INTO data_kelas VALUES (null,'$kelas', '$js')";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+//fungsi menghapus kelas
+function delete_kelas($id)
+{
+    global $conn;
+
+    $query = "DELETE FROM data_kelas WHERE id = $id";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+//fungsi meng-ubah kelas
+function ubah_kelas($post)
+{
+    global $conn;
+
+    $id         = htmlspecialchars($post['id']);
+    $kelas       = htmlspecialchars($post['kelas']);
+    $js         = htmlspecialchars($post['js']);
+
+
+    $query      = "UPDATE data_kelas SET kelas='$kelas', js='$js' WHERE id = '$id'";
 
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);

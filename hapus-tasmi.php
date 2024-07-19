@@ -8,7 +8,6 @@ $id = (int)$_GET['id'];
 
 if (delete_tasmi($id) > 0) {
     echo "<script>
-        alert('Data Tasmi Berhasil Dihapus');
         document.location.href = 'data-tasmi.php';
         </script>";
 } else {

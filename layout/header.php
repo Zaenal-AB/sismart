@@ -36,10 +36,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="assets/admin/index3.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="http://smpitanshol.com/index.html" class="nav-link">Sistem Informasi SMPIT Anak Sholeh Mataram (SiSmart)</a>
                 </li>
             </ul>
 
@@ -163,6 +160,13 @@
                             <a href="data-ziyadah.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-file-circle-plus"></i>
                                 <p> Ziyadah </p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="data-murojaah.php" class="nav-link">
+                                <i class="nav-icon far fa-solid fa-clipboard-list"></i>
+                                <p>Murojaah</p>
                             </a>
                         </li>
                         </li>

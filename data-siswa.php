@@ -16,7 +16,7 @@ include 'config/app.php';
 include 'layout/header.php';
 
 //tampil seluruh data 
-$data_siswa = select("SELECT * FROM data_siswa");
+$data_siswa = select("SELECT * FROM data_siswa ORDER BY data_siswa ASC");
 
 //jika tombok tambah siswa, jalankan script berikut
 if (isset($_POST['tambah'])) {

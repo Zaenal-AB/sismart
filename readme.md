@@ -1,5 +1,3 @@
 //ADD DI DATABASE
 
-1.  Tambahkan Database di keterlambatan
-2.  tambahkan colom 'guru' pada db tabel tahsin
-3.  Penambahan database prestasi siswa
+1.  Data Base data kelas di tambahkan jumlah siswa per kelas, nama kolom adalah JS

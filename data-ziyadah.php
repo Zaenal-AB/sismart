@@ -19,9 +19,9 @@ include 'layout/header.php';
 //Menampilkan Data Ziyadah
 $data_ziyadah = select("SELECT * FROM data_ziyadah ORDER BY `data_ziyadah`.`id` DESC");
 //Menampilkan Data Siswa
-$data_siswa = select("SELECT * FROM data_siswa");
+$data_siswa = select("SELECT * FROM data_siswa ORDER BY `data_siswa`.`nama` ASC");
 //Menampilkan Data Kelas
-$data_kelas = select("SELECT * FROM data_kelas");
+$data_kelas = select("SELECT * FROM data_kelas ORDER BY `data_kelas`.`kelas` ASC");
 //Menampilkan Data Juz
 $data_surat = select("SELECT * FROM data_surat");
 
@@ -47,7 +47,7 @@ if (isset($_POST['tambah'])) {
 //UBAH DATA di tekan, jalan script berikut 
 if (isset($_POST['ubah'])) {
     if (ubah_ziyadah($_POST) > 0) {
-        echo "<script> alert('Data Ziyadah Berhasil Diubah')
+        echo "<script> 
         document.location.href = 'data-ziyadah.php';
         </script>";
     } else {

@@ -8,7 +8,6 @@ $id = (int)$_GET['id'];
 
 if (delete_tahsin($id) > 0) {
     echo "<script>
-        alert('Data Tahsin Berhasil Dihapus');
         document.location.href = 'data-tahsin.php';
         </script>";
 } else {

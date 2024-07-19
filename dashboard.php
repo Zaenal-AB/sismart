@@ -77,13 +77,15 @@ include 'layout/header.php';
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Setting</span>
-                            <span class="info-box-number">X</span>
+                    <a href="setting.php">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Setting</span>
+                                <span class="info-box-number"></span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -185,6 +187,10 @@ include 'layout/header.php';
                 <!-- /.card-footer-->
             </div>
             <!--/.direct-chat -->
+        </section>
+        <!-- /.Left col -->
+        <section class="col-lg-5 connectedSortable">
+            <h3>bagian kiri</h3>
         </section>
     </div>
     <!-- chat end -->

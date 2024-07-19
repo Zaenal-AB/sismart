@@ -8,7 +8,6 @@ $id = (int)$_GET['id'];
 
 if (delete_keterlambatan($id) > 0) {
     echo "<script>
-        alert('Data Keterlambatan Berhasil Dihapus');
         document.location.href = 'data-keterlambatan.php';
         </script>";
 } else {

@@ -19,9 +19,9 @@ include 'layout/header.php';
 //Menampilkan Data Tahsin
 $data_tahsin = select("SELECT * FROM data_tahsin ORDER BY `data_tahsin`.`id` DESC");
 //Menampilkan Data Siswa
-$data_siswa = select("SELECT * FROM data_siswa");
+$data_siswa = select("SELECT * FROM data_siswa ORDER BY `data_siswa`.`nama` ASC");
 //Menampilkan Data Kelas
-$data_kelas = select("SELECT * FROM data_kelas");
+$data_kelas = select("SELECT * FROM data_kelas ORDER BY `data_kelas`.`kelas` ASC");
 
 //tampil data sebagian 
 $data_bylogin = select("SELECT * FROM data_tahsin WHERE nama = '{$_SESSION['nama']}' ORDER BY `data_tahsin`.`id` DESC");
@@ -30,11 +30,12 @@ $data_byguru = select("SELECT * FROM data_tahsin WHERE guru = '{$_SESSION['nama'
 //jika tombok tambah tahsin, jalankan script berikut
 if (isset($_POST['tambah'])) {
     if (create_tahsin($_POST) > 0) {
-        echo "<script> alert('Catatan Tahsin Berhasil Ditambahkan')
+        echo "<script>
         document.location.href = 'data-tahsin.php';
         </script>";
     } else {
-        echo "<script> alert('Catatan Tahsin Gagal Ditambahkan')
+        echo "<script>
+        alert('Catatan Tahsin Gagal Ditambahkan')
         document.location.href = 'data-tahsin.php';
         </script>";
     }
@@ -43,7 +44,7 @@ if (isset($_POST['tambah'])) {
 //UBAH DATA di tekan, jalan script berikut 
 if (isset($_POST['ubah'])) {
     if (ubah_tahsin($_POST) > 0) {
-        echo "<script> alert('Data Tahsin Berhasil Diubah')
+        echo "<script> 
         document.location.href = 'data-tahsin.php';
         </script>";
     } else {
@@ -101,14 +102,16 @@ if (isset($_POST['ubah'])) {
                                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
                                 <?php endif; ?>
 
-                                <div class="col">
+
+                                <!-- MENU FILTER DALAM PENGEMBANGAN -->
+                                <!-- <div class="col">
                                     <form action="" method="post" class="form-inline">
                                         <input type="date" name="tgl_mulai" class="form-control ml-3">
                                         <input type="date" name="tgl_akhir" class="form-control ml-3">
                                         <button type="submit" name="filter_tgl" class="btn btn-info ml-3">Filter</button>
 
                                     </form>
-                                </div>
+                                </div> -->
 
                             </div>
 

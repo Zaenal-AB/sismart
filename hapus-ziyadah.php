@@ -8,7 +8,6 @@ $id = (int)$_GET['id'];
 
 if (delete_ziyadah($id) > 0) {
     echo "<script>
-        alert('Data Ziyadah Berhasil Dihapus');
         document.location.href = 'data-ziyadah.php';
         </script>";
 } else {
