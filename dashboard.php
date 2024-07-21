@@ -5,7 +5,6 @@ session_start();
 // membatasi halaman sebelum login
 if (!isset($_SESSION["login"])) {
     echo "<script>
-    alert('Silahkan Anda Login Dahulu');
     document.location.href = 'login.php';
          </script>";
     exit;
@@ -75,18 +74,21 @@ include 'layout/header.php';
                         </div>
                     </div>
                 </div>
+                <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
 
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="setting.php">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Setting</span>
-                                <span class="info-box-number"></span>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="setting.php">
+                            <div class="info-box mb-3">
+                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Setting</span>
+                                    <span class="info-box-number"></span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+
             </div>
 
         </div>
@@ -173,18 +175,19 @@ include 'layout/header.php';
                     <!--/.direct-chat-messages-->
 
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <form action="#" method="post">
-                        <div class="input-group">
-                            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                            <span class="input-group-append">
-                                <button type="button" class="btn btn-primary">Send</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-                <!-- /.card-footer-->
+                <?php if ($_SESSION['level'] == 3) : ?>
+                    <div class="card-footer">
+                        <form action="#" method="post">
+                            <div class="input-group">
+                                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-primary">Send</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                <?php endif; ?>
+
             </div>
             <!--/.direct-chat -->
         </section>

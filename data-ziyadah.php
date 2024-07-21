@@ -34,7 +34,7 @@ $data_byguru = select("SELECT * FROM data_ziyadah WHERE guru = '{$_SESSION['nama
 //jika tombok tambah ziyadah, jalankan script berikut
 if (isset($_POST['tambah'])) {
     if (create_ziyadah($_POST) > 0) {
-        echo "<script> alert('Catatan Ziyadah Berhasil Ditambahkan')
+        echo "<script> 
         document.location.href = 'data-ziyadah.php';
         </script>";
     } else {

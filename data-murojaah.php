@@ -30,7 +30,7 @@ $data_bylogin = select("SELECT * FROM data_murojaah WHERE nama = '{$_SESSION['na
 //jika tombok tambah murojaah, jalankan script berikut
 if (isset($_POST['tambah'])) {
     if (create_murojaah($_POST) > 0) {
-        echo "<script> alert('Catatan Murojaah Berhasil Ditambahkan')
+        echo "<script> 
         document.location.href = 'data-murojaah.php';
         </script>";
     } else {

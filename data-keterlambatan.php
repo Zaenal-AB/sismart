@@ -26,7 +26,7 @@ $data_bylogin = select("SELECT * FROM data_keterlambatan WHERE nama = '{$_SESSIO
 //jika tombok tambah keterlambatan, jalankan script berikut
 if (isset($_POST['tambah'])) {
     if (create_keterlambatan($_POST) > 0) {
-        echo "<script> alert('Catatan Keterlambatan Berhasil Ditambahkan')
+        echo "<script>
         document.location.href = 'data-keterlambatan.php';
         </script>";
     } else {
@@ -40,7 +40,7 @@ if (isset($_POST['tambah'])) {
 //UBAH DATA di tekan, jalan script berikut 
 if (isset($_POST['ubah'])) {
     if (ubah_keterlambatan($_POST) > 0) {
-        echo "<script> alert('Data Keterlambatan Berhasil Diubah')
+        echo "<script>
         document.location.href = 'data-keterlambatan.php';
         </script>";
     } else {

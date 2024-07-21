@@ -55,7 +55,6 @@ if (isset($_POST['ubah'])) {
     }
 }
 
-
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -77,7 +76,6 @@ if (isset($_POST['ubah'])) {
         </div><!-- /.container-fluid -->
     </section>
 
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -96,12 +94,16 @@ if (isset($_POST['ubah'])) {
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <?php if ($_SESSION['level'] == 1) : ?>
+                                <p>
+                                    Tabel berikut berisi informasi siswa yang mengikuti program tahsin. Program tahsin adalah program pembelajaran Al-Qur'an yang berfokus pada peningkatan kemampuan membaca Al-Qur'an dengan tajwid yang benar.
+                                </p>
+                            <?php endif; ?>
 
                             <div class="row">
                                 <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
                                 <?php endif; ?>
-
 
                                 <!-- MENU FILTER DALAM PENGEMBANGAN -->
                                 <!-- <div class="col">

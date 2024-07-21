@@ -11,6 +11,16 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
+
+// membatasi halaman sesuai user login
+if ($_SESSION["level"] == 1) {
+    echo "<script>
+    alert ('Anda tidak punya akses');
+    document.location.href = 'login.php';
+         </script>";
+    exit;
+}
+
 $title = 'Dashboard';
 include 'config/app.php';
 include 'layout/header.php';
@@ -112,7 +122,7 @@ if (isset($_POST['ubah'])) {
                             <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Setting</span>
-                                <span class="info-box-number">X</span>
+                                <span class="info-box-number"></span>
                             </div>
                         </div>
                     </a>
@@ -232,14 +242,14 @@ if (isset($_POST['ubah'])) {
                     <div class="modal-body">
                         <form action="" method="post">
                             <input type="hidden" name="id" value="<?= $kelas['id'] ?>">
-                            
+
                             <label for="kelas">Kelas</label>
                             <input type="text" class="form-control" id="kelas" name="kelas" value="<?= $kelas['kelas']; ?>" required>
-                            
+
                             <label for="js">Jumlah Siswa</label>
                             <input type="text" class="form-control" id="js" name="js" value="<?= $kelas['js']; ?>" required>
 
-                           
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
                                 <button type="submit" name="ubah" class="btn btn-primary">Ubah Kelas</button>

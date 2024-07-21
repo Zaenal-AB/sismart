@@ -47,7 +47,7 @@ if (isset($_POST['tambah'])) {
 //UBAH DATA di tekan, jalan script berikut 
 if (isset($_POST['ubah'])) {
     if (ubah_tasmi($_POST) > 0) {
-        echo "<script> alert('Data Tasmi Berhasil Diubah')
+        echo "<script> 
         document.location.href = 'data-tasmi.php';
         </script>";
     } else {

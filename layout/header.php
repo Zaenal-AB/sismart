@@ -151,6 +151,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="data-tilawah.php" class="nav-link">
+                                <i class="nav-icon far fa-solid fa-book-open-reader"></i>
+                                <p> Tilawah </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="data-tahsin.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-book-open-reader"></i>
                                 <p> Tahsin </p>
