@@ -238,9 +238,10 @@ function create_murojaah($post)
     $kelas          = htmlspecialchars($post['kelas']);
     $juz            = htmlspecialchars($post['juz']);
     $predikat       = htmlspecialchars($post['predikat']);
+    $guru           = htmlspecialchars($post['guru']);
 
 
-    $query      = "INSERT INTO data_murojaah VALUES (null, null, '$nama', '$kelas','$juz','$predikat')";
+    $query      = "INSERT INTO data_murojaah VALUES (null, null, '$nama', '$kelas','$juz','$predikat', '$guru')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -265,10 +266,11 @@ function ubah_murojaah($post)
     $kelas          = htmlspecialchars($post['kelas']);
     $juz            = htmlspecialchars($post['juz']);
     $predikat       = htmlspecialchars($post['predikat']);
+    $guru           = htmlspecialchars($post['guru']);
 
 
 
-    $query      = "UPDATE data_murojaah SET nama='$nama', kelas='$kelas', juz='$juz', predikat='$predikat' WHERE id = '$id'";
+    $query      = "UPDATE data_murojaah SET nama='$nama', kelas='$kelas', juz='$juz', predikat='$predikat', guru='$guru' WHERE id = '$id'";
 
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
