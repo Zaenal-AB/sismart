@@ -11,10 +11,10 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
+date_default_timezone_set('Asia/Makassar');
 $title = 'Data Tahsin';
 include 'config/app.php';
 include 'layout/header.php';
-
 
 //Menampilkan Data Tahsin
 $data_tahsin = select("SELECT * FROM data_tahsin ORDER BY `data_tahsin`.`id` DESC");

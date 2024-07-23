@@ -192,10 +192,6 @@ include 'layout/header.php';
             <!--/.direct-chat -->
         </section>
         <!-- /.Left col -->
-        <section class="col-lg-5 connectedSortable">
-            <h3>bagian kiri</h3>
-        </section>
-    </div>
     <!-- chat end -->
 
 </div>
