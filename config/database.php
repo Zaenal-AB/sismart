@@ -1,7 +1,7 @@
 <?php
 
 $conn = mysqli_connect('localhost', 'u966478672_sismart', 'Zaenal!7', 'u966478672_sismart');
-// $conn = mysqli_connect('localhost', 'root', '', 'sismart');
+//  $conn = mysqli_connect('localhost', 'root', '', 'sismart');
 
 // check connetion
 // if ($conn) {
@@ -9,3 +9,6 @@ $conn = mysqli_connect('localhost', 'u966478672_sismart', 'Zaenal!7', 'u96647867
 // } else {
 //     echo "koneksi gagal";
 // }
+
+// Atur timezone untuk sesi ini
+$conn->query("SET time_zone = '+08:00'");
