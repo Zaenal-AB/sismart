@@ -159,7 +159,7 @@ if (isset($_POST['ubah'])) {
             <div class="modal-body">
                 <form action="" method="post">
                     <label for="nama">Nama Siswa</label>
-                    <select data-live-search="true" type="text" class="form-control" id="nama" name="nama" required>
+                    <select data-live-search="true" type="text" class="form-control selectpicker" id="nama" name="nama" required>
                         <option value="">-- Pilih Siswa --</option>
                         <?php foreach ($data_siswa as $siswa) : ?>
                             <option value="<?= $siswa['nama']; ?>"><?= $siswa['nama']; ?></option>
@@ -222,7 +222,7 @@ if (isset($_POST['ubah'])) {
                         <input type="hidden" name="id" value="<?= $prestasi['id'] ?>">
 
                         <label for="nama">Nama Siswa</label>
-                        <select data-live-search="true" type="text" class="form-control  mb-1" id="nama" name="nama" value="<?= $prestasi['nama']; ?>" required>
+                        <select data-live-search="true" type="text" class="form-control  mb-1 selectpicker" id="nama" name="nama" value="<?= $prestasi['nama']; ?>" required>
                             <option value="<?= $prestasi['nama']; ?>"><?= $prestasi['nama']; ?></option>
                             <?php foreach ($data_siswa as $siswa) : ?>
                                 <option value="<?= $siswa['nama']; ?>"><?= $siswa['nama']; ?></option>

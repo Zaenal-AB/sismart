@@ -20,6 +20,13 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/admin/dist/css/adminlte.min.css">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Select CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.14/css/bootstrap-select.min.css" rel="stylesheet">
+
+
+
 </head>
 
 <?php

@@ -14,10 +14,20 @@
     </div>
     <!-- ./wrapper -->
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Select JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.14/js/bootstrap-select.min.js"></script>
 
     <script>
-        $.widget.bridge('uibutton', $.ui.button)
+        $(document).ready(function() {
+            $('.selectpicker').selectpicker();
+        });
     </script>
+
+
     <!-- jQuery -->
     <script src="assets/admin/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -41,14 +51,6 @@
     <script src="https://kit.fontawesome.com/b28b8dbd18.js" crossorigin="anonymous"></script>
 
 
-
-    <!-- daterangepicker -->
-    <script src="assets/admin/plugins/moment/moment.min.js"></script>
-    <script src="assets/admin/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Summernote -->
-    <script src="assets/admin/plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
     <!-- Page specific cetak pdf/exel dll script -->
     <script>
