@@ -19,6 +19,10 @@
 
 </head>
 
+<?php
+date_default_timezone_set('Asia/Makassar');
+?>
+
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
@@ -136,13 +140,13 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-                        <li class="nav-header">Al-Qur'an</li>
                         <li class="nav-item">
                             <a href="dashboard.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-house"></i>
                                 <p> Dashboard</p>
                             </a>
                         </li>
+                        <li class="nav-header">Al-Qur'an</li>
                         <li class="nav-item">
                             <a href="data-tilawah.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-book-open-reader"></i>
@@ -182,6 +186,22 @@
                             </a>
                         </li> -->
                         <!-- / END SIDEBAR AL QUR'AN -->
+
+                        <!-- START KURIKULUM -->
+                        <!-- <li class="nav-header">Kurikulum</li>
+                        <li class="nav-item">
+                            <a href="dashboard.php" class="nav-link">
+                                <i class="nav-icon far fa-solid fa-house"></i>
+                                <p>RKPP</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="data-tilawah.php" class="nav-link">
+                                <i class="nav-icon far fa-solid fa-book-open-reader"></i>
+                                <p>Dll</p>
+                            </a>
+                        </li> -->
+                        <!-- END KURIKULUM -->
 
                         <!-- START SIDEBAR REWARD & PUNISHMENT -->
 

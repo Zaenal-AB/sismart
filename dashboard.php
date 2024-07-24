@@ -192,7 +192,8 @@ include 'layout/header.php';
             <!--/.direct-chat -->
         </section>
         <!-- /.Left col -->
-    <!-- chat end -->
+    </div>
+
 
 </div>
 

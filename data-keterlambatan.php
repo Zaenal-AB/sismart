@@ -18,7 +18,7 @@ include 'layout/header.php';
 //Menampilkan Data Keterlambatan
 $data_keterlambatan = select("SELECT * FROM data_keterlambatan ORDER BY `data_keterlambatan`.`id` DESC");
 //Menampilkan Data Siswa
-$data_siswa = select("SELECT * FROM data_siswa");
+$data_siswa = select("SELECT * FROM data_siswa ORDER BY `data_siswa`.`nama` ASC");
 
 //tampil data sebagian 
 $data_bylogin = select("SELECT * FROM data_keterlambatan WHERE nama = '{$_SESSION['nama']}' ORDER BY `data_keterlambatan`.`id` DESC");
@@ -97,14 +97,14 @@ if (isset($_POST['ubah'])) {
                                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahKeterlambatan"><i class="fa-solid fa-circle-plus"></i> Tambah</button>
                                 <?php endif; ?>
 
-                                <div class="col">
+                                <!-- <div class="col">
                                     <form action="" method="post" class="form-inline">
                                         <input type="date" name="tgl_mulai" class="form-control ml-3">
                                         <input type="date" name="tgl_akhir" class="form-control ml-3">
                                         <button type="submit" name="filter_tgl" class="btn btn-info ml-3">Filter</button>
 
                                     </form>
-                                </div>
+                                </div> -->
 
                             </div>
 
@@ -180,11 +180,41 @@ if (isset($_POST['ubah'])) {
                         <?php endforeach; ?>
                     </select>
 
-                    <label for="catatan">Alasan Terlambat</label>
-                    <textarea class="form-control" placeholder="Alasan Keterlambatan disini..." id="catatan" name="alasan" style="height: 120px"></textarea>
+                    <label for="alasan">Alasan Terlambat</label>
+                    <select type="text" class="form-control" id="alasan" name="alasan" required>
+                        <option value="">-- Pilih Alasan Terlambat --</option>
+                        <option value="Kesiangan">Kesiangan</option>
+                        <option value="Kondisi Cuaca">Kondisi Cuaca</option>
+                        <option value="Kemacetan Lalu Lintas">Kemacetan Lalu Lintas</option>
+                        <option value="Kesehatan">Kesehatan</option>
+                        <option value="Lain-lain">Lain-lain</option>
+                    </select>
 
-                    <label for="catatan">Tindakan</label>
-                    <textarea class="form-control" placeholder="Catatan Hukuman Keterlambatan disini..." id="catatan" name="tindakan" style="height: 120px"></textarea>
+                    <!-- <label for="catatan">Alasan Terlambat</label>
+                    <textarea class="form-control" placeholder="Alasan Keterlambatan disini..." id="catatan" name="alasan" style="height: 120px"></textarea> -->
+
+                    <label for="tindakan">Tindakan</label>
+                    <select type="text" class="form-control" id="tindakan" name="tindakan" required>
+                        <option value="">-- Pilih Tindakan --</option>
+                        <option value="Memungungut sampah non organik">Tindakan 1</option>
+                        <option value="Memungut 20 sampah non organik">Tindakan 2</option>
+                        <option value="Tilawah 1 halaman dalam waktu 5 menit">Tindakan 3</option>
+                        <option value="Tilawah 2 halaman dalam waktu 8 menit">Tindakan 4</option>
+                        <option value="Tilawah 3 halaman dan membersihkan toilet">Tindakan 5</option>
+
+                    </select>
+                    <small>
+                        <br>
+                        Keterangan Tindakan: <br>
+                        Pelanggaran 1 : Memungungut sampah non organik <br>
+                        Pelanggaran 2 : Memungut 20 sampah non organik <br>
+                        Pelanggaran 3 : Tilawah 1 halaman dalam waktu 5 menit <br>
+                        Pelanggaran 4 : Tilawah 2 halaman dalam waktu 8 menit <br>
+                        Pelanggaran 5 : Tilawah 3 halaman dan membersihkan toilet
+                    </small>
+
+                    <!-- <label for="catatan">Tindakan</label>
+                    <textarea class="form-control" placeholder="Catatan Hukuman Keterlambatan disini..." id="catatan" name="tindakan" style="height: 120px"></textarea> -->
 
 
                     </select>
