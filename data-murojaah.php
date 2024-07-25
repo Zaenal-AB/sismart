@@ -109,7 +109,7 @@ if (isset($_POST['ubah'])) {
                                         <th class="text-center align-middle">Nama</th>
                                         <th class="text-center align-middle">Kelas</th>
                                         <th class="text-center align-middle">Juz</th>
-                                        <th class="text-center align-middle">Predikat</th>
+                                        <th class="text-center align-middle">Catatan</th>
                                         <th class="text-center align-middle">Pembimbing</th>
                                         <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                             <th class="text-center align-middle">Aksi</th>
@@ -183,7 +183,7 @@ if (isset($_POST['ubah'])) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Catatan murojaah</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Catatan Murojaah</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -207,30 +207,19 @@ if (isset($_POST['ubah'])) {
                         <?php endforeach; ?>
                     </select>
 
-                    <div class="row">
-                        <div class="col">
-                            <label for="juz">Juz</label>
-                            <select data-live-search="true" type="text" class="form-control" id="juz" name="juz" required>
-                                <option value="">-- Pilih Juz --</option>
-                                <?php foreach ($data_juz as $juz) : ?>
-                                    <option value="<?= $juz['juz']; ?>"><?= $juz['juz']; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label for="predikat">Predikat</label>
-                            <select type="text" class="form-control" id="predikat" name="predikat" required>
-                                <option value="">-- Pilih Predikat --</option>
-                                <option value="Mumtaz">Mumtaz</option>
-                                <option value="Jayyid Jiddan">Jayyid Jiddan</option>
-                                <option value="Jayyid">Jayyid</option>
-                                <option value="Tidak Lulus">Tidak Lulus</option>
-                            </select>
-                        </div>
+                    <label for="juz">Juz</label>
+                    <select data-live-search="true" type="text" class="form-control selectpicker" id="juz" name="juz" required>
+                        <option value="">-- Pilih Juz --</option>
+                        <?php foreach ($data_juz as $juz) : ?>
+                            <option value="<?= $juz['juz']; ?>"><?= $juz['juz']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
 
-                        <input type="hidden" name="guru" value="<?= ($_SESSION['nama']) ?>">
+                    <label for="predikat">Catatan Murojaah</label>
+                    <textarea class="form-control" placeholder="Catatan murojaah disini..." id="predikat" name="predikat" style="height: 120px"></textarea>
 
-                    </div>
+                    <input type="hidden" name="guru" value="<?= ($_SESSION['nama']) ?>">
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
                         <button type="submit" name="tambah" class="btn btn-primary">Tambah C. murojaah</button>
@@ -270,7 +259,7 @@ if (isset($_POST['ubah'])) {
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit murojaah</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Murojaah</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -296,27 +285,17 @@ if (isset($_POST['ubah'])) {
                             <?php endforeach; ?>
                         </select>
 
-                        <div class="row">
-                            <div class="col">
-                                <label for="juz">Juz</label>
-                                <select data-live-search="true" type="text" class="form-control  mb-1" id="juz" name="juz" value="<?= $murojaah['juz']; ?>" required>
-                                    <option value="<?= $murojaah['juz']; ?>"><?= $murojaah['juz']; ?></option>
-                                    <?php foreach ($data_juz as $juz) : ?>
-                                        <option value="<?= $juz['juz']; ?>"><?= $juz['juz']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="predikat">Predikat</label>
-                                <select data-live-search="true" type="text" class="form-control  mb-1" id="predikat" name="predikat" value="<?= $murojaah['predikat']; ?>" required>
-                                    <option value="<?= $murojaah['predikat']; ?>"><?= $murojaah['predikat']; ?></option>
-                                    <option value="Mumtaz">Mumtaz</option>
-                                    <option value="Jayyid Jiddan">Jayyid Jiddan</option>
-                                    <option value="Jayyid">Jayyid</option>
-                                    <option value="Tidak Lulus">Tidak Lulus</option>
-                                </select>
-                            </div>
-                        </div>
+                        <label for="juz">Juz</label>
+                        <select data-live-search="true" type="text" class="form-control  mb-1 selectpicker" id="juz" name="juz" value="<?= $murojaah['juz']; ?>" required>
+                            <option value="<?= $murojaah['juz']; ?>"><?= $murojaah['juz']; ?></option>
+                            <?php foreach ($data_juz as $juz) : ?>
+                                <option value="<?= $juz['juz']; ?>"><?= $juz['juz']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+
+                        <label for="predikat">Catatan Murojaah</label>
+                        <textarea class="form-control" placeholder="Catatan murojaah disini..." id="predikat" name="predikat" style="height: 200px"><?= $murojaah['predikat']; ?></textarea>
+
 
                         <input type="hidden" name="guru" value="<?= ($_SESSION['nama']) ?>">
 

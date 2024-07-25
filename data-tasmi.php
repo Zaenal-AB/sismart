@@ -29,6 +29,8 @@ $data_pentasmi = select("SELECT * FROM data_pentasmi");
 
 //tampil data sebagian 
 $data_bylogin = select("SELECT * FROM data_tasmi WHERE nama = '{$_SESSION['nama']}' ORDER BY `data_tasmi`.`id` DESC");
+$data_byguru = select("SELECT * FROM data_tasmi WHERE pentasmi = '{$_SESSION['nama']}' ORDER BY `data_tasmi`.`id` DESC");
+
 
 //jika tombok tambah Tasmi, jalankan script berikut
 if (isset($_POST['tambah'])) {
@@ -122,7 +124,7 @@ if (isset($_POST['ubah'])) {
                                 <tbody>
                                     <?php $no = 1; ?>
                                     <!-- menampilkan seluruh data -->
-                                    <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                                    <?php if ($_SESSION['level'] == 3) : ?>
                                         <?php foreach ($data_tasmi as $tasmi) : ?>
                                             <tr>
                                                 <td class="text-center align-middle"><?= $no++; ?></td>
@@ -138,6 +140,24 @@ if (isset($_POST['ubah'])) {
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
+                                        <!-- Menampilkan seluruh sebagian/siswa  -->
+                                    <?php elseif ($_SESSION['level'] == 2) : ?>
+                                        <?php foreach ($data_byguru as $tasmi) : ?>
+                                            <tr>
+                                                <td class="text-center align-middle"><?= $no++; ?></td>
+                                                <td class="text-center align-middle"><?= date('d/m/Y | H:i', strtotime($tasmi['tanggal'])); ?></td>
+                                                <td class="align-middle"><?= $tasmi['nama']; ?></td>
+                                                <td class="text-center align-middle"><?= $tasmi['kelas']; ?></td>
+                                                <td class="text-center align-middle"><?= $tasmi['juz']; ?></td>
+                                                <td class="text-center align-middle"><?= $tasmi['predikat']; ?></td>
+                                                <td class="text-center align-middle"><?= $tasmi['pentasmi']; ?></td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahTasmi<?= $tasmi['id']; ?>">Ubah</button>
+                                                    <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusTasmi<?= $tasmi['id']; ?>">Hapus</button>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+
                                     <?php else : ?>
                                         <?php foreach ($data_bylogin as $tasmi) : ?>
                                             <tr>
