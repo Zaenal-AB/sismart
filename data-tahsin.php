@@ -11,7 +11,6 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-date_default_timezone_set('Asia/Makassar');
 $title = 'Data Tahsin';
 include 'config/app.php';
 include 'layout/header.php';
