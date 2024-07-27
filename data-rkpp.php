@@ -25,6 +25,10 @@ $title = 'Dashboard';
 include 'config/app.php';
 include 'layout/header.php';
 
+//Menampilkan Data rkpp
+$rkpp_7a = select("SELECT * FROM rkpp_7a");
+
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -45,48 +49,6 @@ include 'layout/header.php';
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
-
-    <!-- Main content -->
-    <!-- <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Tabel Rencana Kerja Pekan Pembelajaran (RKPP)</h3>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr class="text-center">
-                                        <th>No</th>
-                                        <th>Hari</th>
-                                        <th>Mata Pelajaran</th>
-                                        <th>Kegiatan</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="text-center">
-                                        <td>1</td>
-                                        <td>Senin</td>
-                                        <td>Biologi</td>
-                                        <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusKelas"><i class="fas fa-minus"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#TambahKelas">Tambah</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="content">
         <!-- <h5 class="mb-2">Tabs in Cards</h5> -->
@@ -134,178 +96,29 @@ include 'layout/header.php';
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <div class="bagian1">
-                                                            <tr class="text-center">
-                                                                <td rowspan="6">1</td>
-                                                                <td rowspan="6">Senin</td>
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Tugas Rantai Makan</span></td>
-                                                                <td rowspan="6">
-                                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                        </div>
-                                                        <div class="bagian2">
-                                                            <tr class="text-center">
-                                                                <td rowspan="6">2</td>
-                                                                <td rowspan="6">Selasa</td>
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Tugas Rantai Makan</span></td>
-                                                                <td rowspan="6">
-                                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                        </div>
-                                                        <div class="bagian3">
-                                                            <tr class="text-center">
-                                                                <td rowspan="6">3</td>
-                                                                <td rowspan="6">Rabu</td>
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Tugas Rantai Makan</span></td>
-                                                                <td rowspan="6">
-                                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                        </div>
-                                                        <div class="bagian4">
-                                                            <tr class="text-center">
-                                                                <td rowspan="6">4</td>
-                                                                <td rowspan="6">Kamis</td>
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Tugas Rantai Makan</span></td>
-                                                                <td rowspan="6">
-                                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                        </div>
-                                                        <div class="bagian5">
-                                                            <tr class="text-center">
-                                                                <td rowspan="3">5</td>
-                                                                <td rowspan="3">Jum'at</td>
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Tugas Rantai Makan</span></td>
-                                                                <td rowspan="3">
-                                                                    <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            <tr class="text-center">
-                                                                <td>Matematika</td>
-                                                                <td><span class="btn btn-success btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                                <td><span class="btn btn-primary btn-sm">Mendiskripsikan Rantai Makan</span></td>
-                                                            </tr>
-                                                            
-                                                        </div>
-                                                    </tbody>
+                                                        <?php
+                                                        $no = 1;
+                                                        $current_hari = "";
+                                                        $rowspan_count = 6; // Jumlah baris per hari
+
+                                                        foreach ($rkpp_7a as $key => $row) {
+                                                            echo '<tr class="text-center">';
+                                                            if ($key % $rowspan_count == 0) {
+                                                                echo '<td rowspan="' . $rowspan_count . '">' . $no . '</td>';
+                                                                echo '<td rowspan="' . $rowspan_count . '">' . $row['hari'] . '</td>';
+                                                            }
+                                                            echo '<td>' . $row['mapel'] . '</td>';
+                                                            echo '<td><span class="btn btn-success btn-sm">' . $row['rp'] . '</span></td>';
+                                                            echo '<td><span class="btn btn-primary btn-sm">' . $row['ts'] . '</span></td>';
+                                                            if ($key % $rowspan_count == 0) {
+                                                                echo '<td rowspan="' . $rowspan_count . '"><button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahKelas"><i class="fas fa-edit"></i></button></td>';
+                                                            }
+                                                            echo '</tr>';
+                                                            if ($key % $rowspan_count == $rowspan_count - 1) {
+                                                                $no++;
+                                                            }
+                                                        }
+                                                        ?>
                                                 </table>
                                                 <button type="button" class="btn btn-success mt-3 float-sm-right" data-toggle="modal" data-target="#validasi">Validasi Kurikulum</button>
                                             </div>
@@ -912,27 +725,6 @@ include 'layout/header.php';
 
     </section>
 
-</div>
-
-<!-- Modal Hapus ziyadah -->
-<div class="modal fade" id="validasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-success text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Validasi RKPP</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Yakin ingin memvalidasi RKPP pekan ini ?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <a href="#" class="btn btn-success">Validasi</a>
-            </div>
-        </div>
-    </div>
 </div>
 
 

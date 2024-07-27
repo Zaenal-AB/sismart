@@ -70,16 +70,6 @@
                 "autoWidth": false,
                 "responsive": true,
             });
-            $("#example3").DataTable({
-                "paging": false,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": false,
-                "info": false,
-                "autoWidth": false,
-                "responsive": true,
-                "buttons": ["copy", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
         });
     </script>
 
