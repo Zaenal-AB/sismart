@@ -231,7 +231,6 @@ if (isset($_POST['ubah'])) {
                                 <option value="Jayyid">Jayyid</option>
                                 <option value="Tidak Lulus">Tidak Lulus</option>
                             </select>
-                            </select>
                         </div>
                     </div>
 

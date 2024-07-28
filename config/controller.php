@@ -514,3 +514,22 @@ function ubah_kelas($post)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+// =========================== RKPP ==================== //
+
+//fungsi meng-ubah
+function ubah_rkpp($post)
+{
+    global $conn;
+
+    $id         = htmlspecialchars($post['id']);
+    $mapel      = htmlspecialchars($post['mapel']);
+    $rp         = htmlspecialchars($post['rp']);
+    $ts         = htmlspecialchars($post['ts']);
+
+
+    $query      = "UPDATE rkpp_7a SET mapel='$mapel', rp='$rp', ts='$ts'  WHERE id = '$id'";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
