@@ -102,6 +102,7 @@ if (isset($_POST['ubah'])) {
                             <div class="row">
                                 <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
+                                    <a href="pdf/laporan.php">pdf</a>
                                 <?php endif; ?>
 
                                 <!-- MENU FILTER DALAM PENGEMBANGAN -->
