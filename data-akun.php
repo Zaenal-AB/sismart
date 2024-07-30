@@ -230,11 +230,11 @@ if (isset($_POST['ubah'])) {
                         <div class="row mb-2">
                             <div class="col">
                                 <label for="nis">NIS</label>
-                                <input type="text" class="form-control" id="nis" name="nis" value="<?= $akun['nis']; ?>" required disabled>
+                                <input type="text" class="form-control" id="nis" name="nis" value="<?= $akun['nis']; ?>" required>
                             </div>
                             <div class="col">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" value="<?= $akun['username']; ?>" required disabled>
+                                <input type="text" class="form-control" id="username" name="username" value="<?= $akun['username']; ?>" required>
                             </div>
                         </div>
 
