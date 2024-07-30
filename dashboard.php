@@ -98,15 +98,13 @@ include 'layout/header.php';
     <!-- chat start -->
     <!-- Main row -->
     <div class="row">
-        <!-- Left col -->
         <section class="col-lg-7 connectedSortable">
-            <!-- DIRECT CHAT -->
             <div class="card direct-chat direct-chat-primary">
                 <div class="card-header">
                     <h3 class="card-title">Pengumuman</h3>
 
                     <div class="card-tools">
-                        <span title="3 New Messages" class="badge badge-primary">3</span>
+                        <span title="3 New Messages" class="badge badge-primary">0</span>
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
                         </button>
@@ -118,63 +116,45 @@ include 'layout/header.php';
                         </button>
                     </div>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <!-- Conversations are loaded here -->
+                <!-- tulisan chat di sini -->
+                <!-- <div class="card-body">
                     <div class="direct-chat-messages">
-                        <!-- Message. Default to the left -->
                         <div class="direct-chat-msg">
                             <div class="direct-chat-infos clearfix">
                                 <span class="direct-chat-name float-left">Ustadz H. Fitrah Saputra</span>
                                 <span class="direct-chat-timestamp float-right">19 Juli 2024 2:00 pm</span>
                             </div>
-                            <!-- /.direct-chat-infos -->
                             <img class="direct-chat-img" src="assets/img/logo-smpit.jpg" alt="message user image">
-                            <!-- /.direct-chat-img -->
                             <div class="direct-chat-text">
                                 Selamat datang di Sistem Informasi Siswa SMART (SiSMART)
                             </div>
-                            <!-- /.direct-chat-text -->
                         </div>
-                        <!-- /.direct-chat-msg -->
 
-                        <!-- Message to the right -->
                         <div class="direct-chat-msg right">
                             <div class="direct-chat-infos clearfix">
                                 <span class="direct-chat-name float-right">Ustadz Zaenal Abidin</span>
                                 <span class="direct-chat-timestamp float-left">19 Juli 2024 2:05 pm</span>
                             </div>
-                            <!-- /.direct-chat-infos -->
                             <img class="direct-chat-img" src="assets/img/logo-smpit.jpg" alt="message user image">
-                            <!-- /.direct-chat-img -->
                             <div class="direct-chat-text">
                                 Tes cek sound
                             </div>
-                            <!-- /.direct-chat-text -->
                         </div>
-                        <!-- /.direct-chat-msg -->
 
-                        <!-- Message. Default to the left -->
                         <div class="direct-chat-msg">
                             <div class="direct-chat-infos clearfix">
                                 <span class="direct-chat-name float-left">Ustadz Muzanni</span>
                                 <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                             </div>
-                            <!-- /.direct-chat-infos -->
                             <img class="direct-chat-img" src="assets/img/logo-smpit.jpg" alt="message user image">
-                            <!-- /.direct-chat-img -->
                             <div class="direct-chat-text">
                                 Tes dari Tim Qur'an
                             </div>
-                            <!-- /.direct-chat-text -->
                         </div>
-                        <!-- /.direct-chat-msg -->
 
 
                     </div>
-                    <!--/.direct-chat-messages-->
-
-                </div>
+                </div> -->
                 <?php if ($_SESSION['level'] == 3) : ?>
                     <div class="card-footer">
                         <form action="#" method="post">

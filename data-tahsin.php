@@ -152,7 +152,19 @@ if (isset($_POST['ubah'])) {
                                         <?php endforeach; ?>
                                         <!-- Menampilkan seluruh sebagian/siswa  -->
                                     <?php elseif ($_SESSION['level'] == 2) : ?>
-                                        <?php foreach ($data_byguru as $tahsin) : ?>
+                                        <?php
+                                        // Variabel penghitung
+                                        $counter = 0;
+
+                                        // Maksimal data yang ditampilkan
+                                        $max_data = 20;
+
+                                        foreach ($data_byguru as $tahsin) :
+                                            // Memeriksa apakah batas sudah tercapai
+                                            if ($counter >= $max_data) {
+                                                break;
+                                            }
+                                        ?>
                                             <tr>
                                                 <td class="text-center"><?= $no++; ?></td>
                                                 <td class="text-center" id="tanggal1"><?= date('d/m/Y | H:i', strtotime($tahsin['tanggal'])); ?></td>
@@ -166,7 +178,11 @@ if (isset($_POST['ubah'])) {
                                                     <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusTahsin<?= $tahsin['id']; ?>"><i class="fa-solid fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
-                                        <?php endforeach; ?>
+                                        <?php
+                                            // Meningkatkan penghitung
+                                            $counter++;
+                                        endforeach;
+                                        ?>
 
                                     <?php else : ?>
                                         <?php foreach ($data_bylogin as $tahsin) : ?>

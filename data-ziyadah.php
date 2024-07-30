@@ -149,7 +149,19 @@ if (isset($_POST['ubah'])) {
 
                                         <!-- Menampilkan seluruh sebagian/siswa  -->
                                     <?php elseif ($_SESSION['level'] == 2) : ?>
-                                        <?php foreach ($data_byguru as $ziyadah) : ?>
+                                        <?php
+                                        // Variabel penghitung
+                                        $counter = 0;
+
+                                        // Maksimal data yang ditampilkan
+                                        $max_data = 20;
+
+                                        foreach ($data_byguru as $ziyadah) :
+                                            // Memeriksa apakah batas sudah tercapai
+                                            if ($counter >= $max_data) {
+                                                break;
+                                            }
+                                        ?>
                                             <tr>
                                                 <td class="text-center align-middle"><?= $no++; ?></td>
                                                 <td class="text-center align-middle"><?= date('d/m/Y | H:i', strtotime($ziyadah['tanggal'])); ?></td>
