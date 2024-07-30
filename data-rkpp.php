@@ -13,7 +13,7 @@ if (!isset($_SESSION["login"])) {
 
 
 // membatasi halaman sesuai user login
-if ($_SESSION["level"] == 1) {
+if ($_SESSION["level"] == 1 or $_SESSION["level"] == 2 ) {
     echo "<script>
     alert ('Anda tidak punya akses');
     document.location.href = 'login.php';
@@ -97,6 +97,8 @@ if (isset($_POST['ubahrkpp'])) {
                                         <div class="card">
                                             <div class="card-header">
                                                 <h3 class="card-title">Tabel Rencana Kegiatan Pembelajaran Pekanan (RKPP) Kelas VII-A</h3>
+                                                <a href="pdf-rkpp.php" target="_blank"> <button type="button" class="btn btn-danger float-sm-right">Cetak PDF</button> </a>
+
                                             </div>
                                             <div class="card-body">
                                                 <table class="table table-bordered">
