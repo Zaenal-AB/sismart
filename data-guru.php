@@ -13,7 +13,7 @@ if (!isset($_SESSION["login"])) {
 
 $title = 'Data Siswa';
 include 'config/app.php';
-include 'layout/header.php';
+include 'layout/header2.php';
 
 //tampil seluruh data 
 $data_guru = select("SELECT * FROM data_guru");
@@ -219,5 +219,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include 'layout/footer2.php';
 ?>

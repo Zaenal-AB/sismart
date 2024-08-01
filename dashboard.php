@@ -11,7 +11,7 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Dashboard';
-include 'layout/header.php';
+include 'layout/header2.php';
 
 ?>
 
@@ -178,5 +178,5 @@ include 'layout/header.php';
 </div>
 
 <?php
-include 'layout/footer.php';
+include 'layout/footer2.php';
 ?>

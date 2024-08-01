@@ -13,7 +13,7 @@ if (!isset($_SESSION["login"])) {
 
 $title = 'Data Penghargaan';
 include 'config/app.php';
-include 'layout/header.php';
+include 'layout/header2.php';
 
 //Menampilkan Data Prestasi
 $data_prestasi = select("SELECT * FROM data_prestasi ORDER BY `data_prestasi`.`id` DESC");
@@ -245,5 +245,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include 'layout/footer2.php';
 ?>

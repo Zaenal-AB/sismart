@@ -13,7 +13,7 @@ if (!isset($_SESSION["login"])) {
 
 $title = 'Data Point Siswa';
 include 'config/app.php';
-include 'layout/header.php';
+include 'layout/header2.php';
 
 
 ?>
@@ -40,5 +40,5 @@ include 'layout/header.php';
 </div>
 
 <?php
-include 'layout/footer.php';
+include 'layout/footer2.php';
 ?>

@@ -23,7 +23,7 @@ if ($_SESSION["level"] == 1) {
 
 $title = 'Dashboard';
 include 'config/app.php';
-include 'layout/header.php';
+include 'layout/header2.php';
 
 //Menampilkan Data Kelas
 $data_kelas = select("SELECT * FROM data_kelas ORDER BY `data_kelas`.`kelas` ASC");
@@ -265,5 +265,5 @@ if (isset($_POST['ubah'])) {
 </div>
 
 <?php
-include 'layout/footer.php';
+include 'layout/footer2.php';
 ?>
