@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Murojaah';
-include 'config/app.php';
-include 'layout/header.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data Murojaah
 $data_murojaah = select("SELECT * FROM data_murojaah ORDER BY `data_murojaah`.`id` DESC");
@@ -33,11 +33,11 @@ $data_byguru = select("SELECT * FROM data_murojaah WHERE guru = '{$_SESSION['nam
 if (isset($_POST['tambah'])) {
     if (create_murojaah($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'data-murojaah.php';
+        document.location.href = 'murojaah.php';
         </script>";
     } else {
         echo "<script> alert('Catatan Murojaah Gagal Ditambahkan')
-        document.location.href = 'data-murojaah.php';
+        document.location.href = 'murojaah.php';
         </script>";
     }
 }
@@ -46,11 +46,11 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_murojaah($_POST) > 0) {
         echo "<script>
-        document.location.href = 'data-murojaah.php';
+        document.location.href = 'murojaah.php';
         </script>";
     } else {
         echo "<script> alert('Data Murojaah Gagal diubah')
-        document.location.href = 'data-murojaah.php';
+        document.location.href = 'murojaah.php';
 
         </script>";
     }
@@ -257,7 +257,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-murojaah.php?id=<?= $murojaah['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="murojaah-hapus.php?id=<?= $murojaah['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -324,5 +324,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Tilawah';
-include 'config/app.php';
-include 'layout/header.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 ?>
 
@@ -94,5 +94,5 @@ include 'layout/header.php';
 </div>
 
 <?php
-include 'layout/footer.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

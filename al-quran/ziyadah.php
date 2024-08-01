@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Ziyadah';
-include 'config/app.php';
-include 'layout/header.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 
 //Menampilkan Data Ziyadah
@@ -35,11 +35,11 @@ $data_byguru = select("SELECT * FROM data_ziyadah WHERE guru = '{$_SESSION['nama
 if (isset($_POST['tambah'])) {
     if (create_ziyadah($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'data-ziyadah.php';
+        document.location.href = 'ziyadah.php';
         </script>";
     } else {
         echo "<script> alert('Catatan Ziyadah Gagal Ditambahkan')
-        document.location.href = 'data-ziyadah.php';
+        document.location.href = 'ziyadah.php';
         </script>";
     }
 }
@@ -48,11 +48,11 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_ziyadah($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'data-ziyadah.php';
+        document.location.href = 'ziyadah.php';
         </script>";
     } else {
         echo "<script> alert('Data Ziyadah Gagal diubah')
-        document.location.href = 'data-ziyadah.php';
+        document.location.href = 'ziyadah.php';
 
         </script>";
     }
@@ -294,7 +294,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-ziyadah.php?id=<?= $ziyadah['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="ziyadah-hapus.php?id=<?= $ziyadah['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -375,5 +375,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

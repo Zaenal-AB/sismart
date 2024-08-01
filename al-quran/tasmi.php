@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Tasmi';
-include 'config/app.php';
-include 'layout/header.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 
 //Menampilkan Data Ziyadah
@@ -36,12 +36,12 @@ $data_byguru = select("SELECT * FROM data_tasmi WHERE pentasmi = '{$_SESSION['na
 if (isset($_POST['tambah'])) {
     if (create_tasmi($_POST) > 0) {
         echo "<script>
-        document.location.href = 'data-tasmi.php';
+        document.location.href = 'tasmi.php';
         </script>";
     } else {
         echo "<script>
         alert('Catatan Tasmi Gagal Ditambahkan')
-        document.location.href = 'data-tasmi.php';
+        document.location.href = 'tasmi.php';
         </script>";
     }
 }
@@ -50,11 +50,11 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_tasmi($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'data-tasmi.php';
+        document.location.href = 'tasmi.php';
         </script>";
     } else {
         echo "<script> alert('Data Tasmi Gagal diubah')
-        document.location.href = 'data-tasmi.php';
+        document.location.href = 'tasmi.php';
 
         </script>";
     }
@@ -284,7 +284,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-tasmi.php?id=<?= $tasmi['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="tasmi-hapus.php?id=<?= $tasmi['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -366,5 +366,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

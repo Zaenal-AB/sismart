@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Tahsin';
-include 'config/app.php';
-include 'layout/header.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data Tahsin
 $data_tahsin = select("SELECT * FROM data_tahsin ORDER BY `data_tahsin`.`id` DESC");
@@ -30,12 +30,12 @@ $data_byguru = select("SELECT * FROM data_tahsin WHERE guru = '{$_SESSION['nama'
 if (isset($_POST['tambah'])) {
     if (create_tahsin($_POST) > 0) {
         echo "<script>
-        document.location.href = 'data-tahsin.php';
+        document.location.href = 'tahsin.php';
         </script>";
     } else {
         echo "<script>
         alert('Catatan Tahsin Gagal Ditambahkan')
-        document.location.href = 'data-tahsin.php';
+        document.location.href = 'tahsin.php';
         </script>";
     }
 }
@@ -44,11 +44,11 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_tahsin($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'data-tahsin.php';
+        document.location.href = 'tahsin.php';
         </script>";
     } else {
         echo "<script> alert('Data Tahsin Gagal diubah')
-        document.location.href = 'data-tahsin.php';
+        document.location.href = 'tahsin.php';
 
         </script>";
     }
@@ -274,7 +274,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-tahsin.php?id=<?= $tahsin['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="tahsin-hapus.php?id=<?= $tahsin['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -336,5 +336,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

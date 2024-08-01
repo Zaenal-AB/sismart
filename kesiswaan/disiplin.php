@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Keterlambatan';
-include 'config/app.php';
-include 'layout/header.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data Keterlambatan
 $data_keterlambatan = select("SELECT * FROM data_keterlambatan ORDER BY `data_keterlambatan`.`id` DESC");
@@ -27,11 +27,11 @@ $data_bylogin = select("SELECT * FROM data_keterlambatan WHERE nama = '{$_SESSIO
 if (isset($_POST['tambah'])) {
     if (create_keterlambatan($_POST) > 0) {
         echo "<script>
-        document.location.href = 'data-keterlambatan.php';
+        document.location.href = 'disiplin.php';
         </script>";
     } else {
         echo "<script> alert('Catatan keterlambatan Gagal Ditambahkan')
-        document.location.href = 'data-keterlambatan.php';
+        document.location.href = 'disiplin.php';
         </script>";
     }
 }
@@ -41,11 +41,11 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_keterlambatan($_POST) > 0) {
         echo "<script>
-        document.location.href = 'data-keterlambatan.php';
+        document.location.href = 'disiplin.php';
         </script>";
     } else {
         echo "<script> alert('Data Keterlambatan Gagal diubah')
-        document.location.href = 'data-keterlambatan.php';
+        document.location.href = 'disiplin.php';
 
         </script>";
     }
@@ -246,7 +246,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-keterlambatan.php?id=<?= $keterlambatan['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="hapus-disiplin.php?id=<?= $keterlambatan['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -297,5 +297,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>
