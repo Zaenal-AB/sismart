@@ -11,7 +11,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Dashboard';
-include 'layout/header2.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 ?>
 
@@ -65,19 +66,23 @@ include 'layout/header2.php';
                 <div class="clearfix hidden-md-up"></div>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
+                    <a href="kelas.php">
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Rombongan Kelas</span>
-                            <span class="info-box-number">10</span>
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Rombongan Kelas</span>
+                                <span class="info-box-number">10</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
                 </div>
                 <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
 
                     <div class="col-12 col-sm-6 col-md-3">
-                        <a href="setting.php">
+                        <a href="#">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
                                 <div class="info-box-content">
@@ -178,5 +183,6 @@ include 'layout/header2.php';
 </div>
 
 <?php
-include 'layout/footer2.php';
+include __DIR__ . '/../layout/footer2.php';
+
 ?>

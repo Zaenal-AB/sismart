@@ -282,57 +282,6 @@ if (isset($_POST['ubah'])) {
 <?php endforeach; ?>
 
 
-<!-- Modal Ubah tahsin  -->
-<?php foreach ($data_tahsin as $tahsin) : ?>
-    <div class="modal fade" id="UbahTahsin<?= $tahsin['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-success text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Tahsin</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post">
-                        <input type="hidden" name="id" value="<?= $tahsin['id'] ?>">
-
-                        <label for="nama">Nama Siswa</label>
-                        <select data-live-search="true" type="text" class="form-control  mb-1 selectpicker" id="nama" name="nama" value="<?= $tahsin['nama']; ?>" required>
-                            <option value="<?= $tahsin['nama']; ?>"><?= $tahsin['nama']; ?></option>
-                            <?php foreach ($data_siswa as $siswa) : ?>
-                                <option value="<?= $siswa['nama']; ?>"><?= $siswa['nama']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-
-                        <label for="kelas">Kelas</label>
-                        <select data-live-search="true" type="text" class="form-control  mb-1" id="kelas" name="kelas" value="<?= $tahsin['kelas']; ?>" required>
-                            <option value="<?= $tahsin['kelas']; ?>"><?= $tahsin['kelas']; ?></option>
-                            <?php foreach ($data_kelas as $kelas) : ?>
-                                <option value="<?= $kelas['kelas']; ?>"><?= $kelas['kelas']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-
-                        <label for="catatan">Catatan Tahisn</label>
-                        <textarea class="form-control" placeholder="Catatan tahsin disini..." id="catatan" name="catatan" style="height: 200px"><?= $tahsin['catatan']; ?></textarea>
-
-                        <label for="keterangan">Keterangan</label>
-                        <select type="text" class="form-control" id="keterangan" name="keterangan" required>
-                            <?php $keterangan = $tahsin['keterangan']; ?>
-                            <option value="Setor" <?= $keterangan == 'Setor' ? 'selected' : null ?>>Setor</option>
-                            <option value="Tidak Setor" <?= $keterangan == 'Tidak Setor' ? 'selected' : null ?>>Tidak Setor</option>
-                        </select>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                            <button type="submit" name="ubah" class="btn btn-primary">Ubah tahsin</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
 
 
 <?php

@@ -292,7 +292,7 @@ if (isset($_POST['ubah'])) {
 <?php endforeach; ?>
 
 <!-- Modal Ubah tasmi  -->
-<?php foreach ($data_tasmi as $tasmi) : ?>
+<!-- <?php foreach ($data_tasmi as $tasmi) : ?>
     <div class="modal fade" id="UbahTasmi<?= $tasmi['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -362,7 +362,7 @@ if (isset($_POST['ubah'])) {
             </div>
         </div>
     </div>
-<?php endforeach; ?>
+<?php endforeach; ?> -->
 
 
 <?php

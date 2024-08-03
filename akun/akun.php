@@ -12,8 +12,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $title = 'Data Akun';
-include 'config/app.php';
-include 'layout/header2.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 //tampil seluruh data 
 $data_akun = select("SELECT * FROM data_akun ORDER BY `data_akun`.`nama` ASC");
@@ -26,11 +26,11 @@ $data_bylogin = select("SELECT * FROM data_akun WHERE id = $id_akun");
 if (isset($_POST['tambah'])) {
     if (create_akun($_POST) > 0) {
         echo "<script> alert('Akun Berhasil Ditambahkan')
-        document.location.href = 'data-akun.php';
+        document.location.href = 'akun.php';
         </script>";
     } else {
         echo "<script> alert('Akun Gagal Ditambahkan')
-        document.location.href = 'data-akun.php';
+        document.location.href = 'akun.php';
         </script>";
     }
 }
@@ -38,12 +38,12 @@ if (isset($_POST['tambah'])) {
 //UBAH DATA di tekan, jalan script berikut 
 if (isset($_POST['ubah'])) {
     if (ubah_akun($_POST) > 0) {
-        echo "<script> alert('Akun Berhasil Ditambahkan')
-        document.location.href = 'data-akun.php';
+        echo "<script> alert('Akun Berhasil Ubah')
+        document.location.href = 'akun.php';
         </script>";
     } else {
-        echo "<script> alert('Data Akun Gagal diubah')
-      ;
+        echo "<script> alert('Data Akun Gagal Ubah')
+        document.location.href = 'akun.php';
         </script>";
     }
 }
@@ -78,7 +78,7 @@ if (isset($_POST['ubah'])) {
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Data Akun </h3>
+                            <h3 class="card-title">Tabel Data Akun Tim</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -203,7 +203,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-akun.php?id=<?= $akun['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="akun-hapus.php?id=<?= $akun['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -224,8 +224,8 @@ if (isset($_POST['ubah'])) {
                 <div class="modal-body">
                     <form action="" method="post">
                         <input type="hidden" name="id" value="<?= $akun['id'] ?>">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $akun['nama']; ?>" required disabled>
+                        <!-- <label for="nama">Nama</label> -->
+                        <input type="hidden" class="form-control" id="nama" name="nama" value="<?= $akun['nama']; ?>" required>
 
                         <div class="row mb-2">
                             <div class="col">
@@ -267,5 +267,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer2.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

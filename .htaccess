@@ -1,15 +1,19 @@
 # menyembunyikan list file/direktori
+
 Options -Indexes
 
 # menyembunyikan signature/tanda server
+
 ServerSignature Off
 
 # memblokir/membuka akses ip address
+
 #Order Allow,Deny
-    #Allow from 127.0.0.1
+#Allow from 127.0.0.1
 #Allow from all
 
 # menghilangkan ekstensi file di url
+
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -18,9 +22,24 @@ ServerSignature Off
 </IfModule>
 
 # redirect/mengalihkan ke url lain
+
 # redirect /crud-php/mahasiswa.php https://mubatekno.com
 
+# save cache
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 hour"
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
 # kompress gzip
+
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html
 AddOutputFilterByType DEFLATE text/css

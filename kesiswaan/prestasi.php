@@ -11,9 +11,9 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-$title = 'Data Penghargaan';
-include 'config/app.php';
-include 'layout/header2.php';
+$title = 'Prestasi Siswa';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data Prestasi
 $data_prestasi = select("SELECT * FROM data_prestasi ORDER BY `data_prestasi`.`id` DESC");
@@ -27,11 +27,11 @@ $data_bylogin = select("SELECT * FROM data_prestasi WHERE nama = '{$_SESSION['na
 if (isset($_POST['tambah'])) {
     if (create_prestasi($_POST) > 0) {
         echo "<script> alert('Catatan Prestasi Berhasil Ditambahkan')
-        document.location.href = 'data-penghargaan.php';
+        document.location.href = 'prestasi.php';
         </script>";
     } else {
         echo "<script> alert('Catatan Prestasi Gagal Ditambahkan')
-        document.location.href = 'data-penghargaan.php';
+        document.location.href = 'prestasi.php';
         </script>";
     }
 }
@@ -41,11 +41,11 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_prestasi($_POST) > 0) {
         echo "<script> alert('Data Prestasi Berhasil Diubah')
-        document.location.href = 'data-penghargaan.php';
+        document.location.href = 'prestasi.php';
         </script>";
     } else {
         echo "<script> alert('Data Prestasi Gagal diubah')
-        document.location.href = 'data-penghargaan.php';
+        document.location.href = 'prestasi.php';
 
         </script>";
     }
@@ -198,7 +198,7 @@ if (isset($_POST['ubah'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                    <a href="hapus-prestasi.php?id=<?= $prestasi['id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="prestasi-hapus.php?id=<?= $prestasi['id']; ?>" class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>
@@ -245,5 +245,5 @@ if (isset($_POST['ubah'])) {
 
 
 <?php
-include 'layout/footer2.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

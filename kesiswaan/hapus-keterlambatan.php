@@ -8,11 +8,11 @@ $id = (int)$_GET['id'];
 
 if (delete_keterlambatan($id) > 0) {
     echo "<script>
-        document.location.href = 'disiplin.php';
+        document.location.href = 'keterlambatan.php';
         </script>";
 } else {
     echo "<script>
         alert('Data Keterlambatan Gagal Dihapus');
-        document.location.href = 'disiplin.php';
+        document.location.href = 'keterlambatan.php';
         </script>";
 }

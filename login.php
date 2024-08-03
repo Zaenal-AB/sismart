@@ -9,7 +9,7 @@ if (isset($_SESSION['login'])) {
 }
 
 
-include 'config/app.php';
+include(__DIR__ . '/config/app.php');
 
 //mengecek apakah tombol login di tekan
 if (isset($_POST['login'])) {
@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
             $_SESSION['nis']      = $row['nis'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['level']    = $row['level'];
-            header("Location: dashboard.php");
+            header("Location: dashboard/dashboard.php");
             exit;
         }
     }

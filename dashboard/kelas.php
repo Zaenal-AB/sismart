@@ -13,7 +13,7 @@ if (!isset($_SESSION["login"])) {
 
 
 // membatasi halaman sesuai user login
-if ($_SESSION["level"] == 1) {
+if ($_SESSION["level"] == 1 or $_SESSION["level"] == 2 ) {
     echo "<script>
     alert ('Anda tidak punya akses');
     document.location.href = 'login.php';
@@ -22,8 +22,8 @@ if ($_SESSION["level"] == 1) {
 }
 
 $title = 'Dashboard';
-include 'config/app.php';
-include 'layout/header2.php';
+include __DIR__ . '/../config/app.php';
+include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data Kelas
 $data_kelas = select("SELECT * FROM data_kelas ORDER BY `data_kelas`.`kelas` ASC");
@@ -32,11 +32,11 @@ $data_kelas = select("SELECT * FROM data_kelas ORDER BY `data_kelas`.`kelas` ASC
 if (isset($_POST['tambah'])) {
     if (create_kelas($_POST) > 0) {
         echo "<script>
-        document.location.href = 'setting.php';
+        document.location.href = 'kelas.php';
         </script>";
     } else {
         echo "<script> alert('Siswa Gagal Ditambahkan')
-        document.location.href = 'setting.php';
+        document.location.href = 'kelas.php';
         </script>";
     }
 }
@@ -45,7 +45,7 @@ if (isset($_POST['tambah'])) {
 if (isset($_POST['ubah'])) {
     if (ubah_kelas($_POST) > 0) {
         echo "<script>
-        document.location.href = 'setting.php';
+        document.location.href = 'kelas.php';
         </script>";
     } else {
         echo "<script> alert('Data Siswa Gagal diubah')
@@ -106,14 +106,17 @@ if (isset($_POST['ubah'])) {
                 <div class="clearfix hidden-md-up"></div>
 
                 <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
+                    <a href="kelas.php">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Rombongan Kelas</span>
-                            <span class="info-box-number">10</span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Rombongan Kelas</span>
+                                <span class="info-box-number">10</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-3">
@@ -121,7 +124,7 @@ if (isset($_POST['ubah'])) {
                         <div class="info-box mb-3">
                             <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-cog"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Setting</span>
+                                <span class="info-box-text">kelas</span>
                                 <span class="info-box-number"></span>
                             </div>
                         </div>
@@ -221,7 +224,7 @@ if (isset($_POST['ubah'])) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                        <a href="hapus-kelas.php?id=<?= $kelas['id']; ?>" class="btn btn-danger">Hapus</a>
+                        <a href="kelas-hapus.php?id=<?= $kelas['id']; ?>" class="btn btn-danger">Hapus</a>
                     </div>
                 </div>
             </div>
@@ -265,5 +268,5 @@ if (isset($_POST['ubah'])) {
 </div>
 
 <?php
-include 'layout/footer2.php';
+include __DIR__ . '/../layout/footer2.php';
 ?>

@@ -151,11 +151,35 @@ date_default_timezone_set('Asia/Makassar');
                with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
-                            <a href="dashboard.php" class="nav-link">
+                            <a href="../dashboard/dashboard.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-house"></i>
                                 <p> Dashboard</p>
                             </a>
                         </li>
+
+                        <!-- <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                            <li class="nav-header">Data Sekolah</li>
+                        <?php endif; ?> -->
+                        <ul class="nav nav-treeview">
+
+                        </ul>
+                        <?php if ($_SESSION['level'] == 3) : ?>
+                            <li class="nav-item">
+                                <a href="../data-sekolah/data-waka.php" class="nav-link">
+                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <p>Data Pimpinan</p>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
+                            <li class="nav-item">
+                                <a href="../data-sekolah/data-tim.php" class="nav-link">
+                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <p>Data Tim</p>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
                         <li class="nav-header">Al-Qur'an</li>
                         <li class="nav-item">
                             <a href="../al-quran/tilawah.php" class="nav-link">
@@ -212,7 +236,7 @@ date_default_timezone_set('Asia/Makassar');
 
                         <li class="nav-header">Penghargaan & Pembinaan</li>
                         <li class="nav-item">
-                            <a href="data-penghargaan.php" class="nav-link">
+                            <a href="../kesiswaan/prestasi.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-award"></i>
                                 <p>Prestasi</p>
                             </a>
@@ -227,7 +251,7 @@ date_default_timezone_set('Asia/Makassar');
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../kesiswaan/disiplin.php" class="nav-link">
+                                    <a href="../kesiswaan/keterlambatan.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-danger"></i>
                                         <p>Keterlambatan</p>
                                     </a>
@@ -244,7 +268,7 @@ date_default_timezone_set('Asia/Makassar');
 
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">
-                            <a href="data-akun.php" class="nav-link">
+                            <a href="../akun/akun.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-user-gear"></i>
                                 <p> Pengaturan Akun</p>
                             </a>
@@ -253,7 +277,7 @@ date_default_timezone_set('Asia/Makassar');
                         <br>
                         <br>
                         <li class="nav-item">
-                            <a href="logout.php" class="nav-link">
+                            <a href="../logout.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-right-from-bracket"></i>
                                 <p>Logout</p>
                             </a>
