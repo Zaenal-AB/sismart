@@ -4,7 +4,7 @@
 include __DIR__ . '/../../config/app.php';
 include __DIR__ . '/../../vendor/autoload.php';
 $rkpp_7a = select("SELECT * FROM rkpp_7a");
-$data = select("SELECT * FROM pdf_rkpp");
+$data = select("SELECT * FROM pdf_rkpp7a");
 
 $mpdf = new \Mpdf\Mpdf();
 
