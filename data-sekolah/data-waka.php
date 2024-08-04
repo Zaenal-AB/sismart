@@ -53,7 +53,7 @@ include __DIR__ . '/../layout/header2.php';
             <!-- Info boxes -->
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-3">
-                    <a href="#">
+                    <a target="_blank" href="https://docs.google.com/document/d/1y6VuipIUUEtg02GJofIPQTLLnGsitk4W/edit?usp=sharing&ouid=111283746210636328981&rtpof=true&sd=true">
                         <div class="info-box">
                             <span class="info-box-icon bg-info elevation-1"><i class="far fa-copy"></i></span>
 
