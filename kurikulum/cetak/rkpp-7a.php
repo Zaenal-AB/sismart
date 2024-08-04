@@ -4,6 +4,7 @@
 include __DIR__ . '/../../config/app.php';
 include __DIR__ . '/../../vendor/autoload.php';
 $rkpp_7a = select("SELECT * FROM rkpp_7a");
+$data = select("SELECT * FROM pdf_rkpp");
 
 $mpdf = new \Mpdf\Mpdf();
 
@@ -56,16 +57,38 @@ $html = '
 
         .table th, .table td {
             padding: 5px;
-            text-align: left;
+            text-align: center;
         }
         .table2 {
             width: 100%;
             border: 1px solid black;
             justify-content:flex-start;
             padding: 5px;
-
         }
     
+        .info-table td{
+            vertical-align: top;
+            padding: 10px;
+        }
+
+        .col1{
+            width: 50%;
+            text-align: left;
+        }
+
+        .col2{
+            width: 300px;
+            text-align: left;
+        }
+
+        .col3{
+            width: 100;
+            text-align: left;
+        }
+        .block-image{
+        display: block;
+        margin:0 auto;
+        }
 
     </style>
 </head>
@@ -76,20 +99,35 @@ $html = '
     </div>
 
     <h3 class="judul">Rencana Kegiatan Pembelajaran Pekanan (RKPP) Kelas VII-A</h3>
-    <h3 class="judul">SMPIT Anak Sholeh Mataram</h3>
+    <h3 class="judul">SMPIT Anak Sholeh Mataram </h3>
 
-     <div class="card-body">
-        <table class="table2">
-            <thead>
-                <tr class="text-center">
-                    <th class="tex">Rencana Pembelajaran</th>
-                    <th class="tex">Tugas Siswa Dirumah</th>
-                </tr>
-            </thead>
-            
+    <div class="info-table">';
+foreach ($data as $row) {
+
+    $html .= '
+        <table>
+            <tr>
+                <td class="col1">
+                    <p class="tex">Kelas</p>
+                    <p class="tex">Semester/Tahun</p>
+                </td>
+                <td class="col1">
+                    <p class="tex">: ' . $row['kelas'] . '</p>
+                    <p class="tex">: ' . $row['semester'] . '</p>
+                </td>
+                <td class="col1">
+                    <p class="tex">Pekan Ke</p>
+                    <p class="tex">Periode</p>
+                </td>
+                <td class="col1">
+                    <p class="tex">: ' . $row['pekan'] . '</p>
+                    <p class="tex">: ' . $row['periode'] . '</p>
+                </td>
+            </tr>
         </table>
-    </div>
-
+    </div>';
+}
+$html .= '
     <div class="card-body">
         <table class="table table-bordered">
             <thead>
@@ -122,6 +160,49 @@ $html .= '
             </tbody>
         </table>
     </div>
+    <div class="info-table">
+        <table>
+            <tr>
+                 <td class="col3">
+                    <p class="tex"> </p>
+                    <br>
+                    <br>
+                    <p class="tex">  </p>
+                </td>
+
+                <td class="col2">
+                    <p class="tex">Mengetahui</p>
+                    <p class="tex">Wakil Kepala Sekolah Bidang Kurikulum</p>
+                    <div>
+                        <img style="height: 50px;" src="ttd1.png" alt="ttd">
+                    </div>
+                    <p class="tex">Siti Rohul Isnaini, S.Pd</p>
+                </td>
+                <td class="col1">
+                    <p class="tex"> </p>
+                    <br>
+                    <br>
+                    <p class="tex">  </p>
+                </td>
+
+                <td class="col2">
+                    <p class="tex">Mataram, 8 Agustus 2024</p>
+                    <p class="tex">Wali Kelas VII-A</p>
+                    <div>
+                        <img class="block-image" style="height: 50px;" src="ttd1.png" alt="ttd">
+                    </div>
+                    <p class="tex">M. Zakaria</p>
+                </td>
+                <td class="col1">
+                    <p class="tex"> </p>
+                    <br>
+                    <br>
+                    <p class="tex">  </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>';
 

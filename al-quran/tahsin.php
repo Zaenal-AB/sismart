@@ -103,17 +103,6 @@ if (isset($_POST['ubah'])) {
                                 <?php if ($_SESSION['level'] == 2 or $_SESSION['level'] == 3) : ?>
                                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#TambahTahsin"><i class="fa-solid fa-circle-plus"></i> Tambah Data Tahsin</button>
                                 <?php endif; ?>
-
-                                <!-- MENU FILTER DALAM PENGEMBANGAN -->
-                                <!-- <div class="col">
-                                    <form action="" method="post" class="form-inline">
-                                        <input type="date" name="tgl_mulai" class="form-control ml-3">
-                                        <input type="date" name="tgl_akhir" class="form-control ml-3">
-                                        <button type="submit" name="filter_tgl" class="btn btn-info ml-3">Filter</button>
-
-                                    </form>
-                                </div> -->
-
                             </div>
 
                             <table id="example1" class="table table-bordered table-striped select2bs4 select2">
@@ -153,17 +142,7 @@ if (isset($_POST['ubah'])) {
                                         <!-- Menampilkan seluruh sebagian/siswa  -->
                                     <?php elseif ($_SESSION['level'] == 2) : ?>
                                         <?php
-                                        // Variabel penghitung
-                                        $counter = 0;
-
-                                        // Maksimal data yang ditampilkan
-                                        $max_data = 20;
-
                                         foreach ($data_byguru as $tahsin) :
-                                            // Memeriksa apakah batas sudah tercapai
-                                            if ($counter >= $max_data) {
-                                                break;
-                                            }
                                         ?>
                                             <tr>
                                                 <td class="text-center"><?= $no++; ?></td>
@@ -179,8 +158,6 @@ if (isset($_POST['ubah'])) {
                                                 </td>
                                             </tr>
                                         <?php
-                                            // Meningkatkan penghitung
-                                            $counter++;
                                         endforeach;
                                         ?>
 

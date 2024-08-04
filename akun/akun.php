@@ -16,7 +16,7 @@ include __DIR__ . '/../config/app.php';
 include __DIR__ . '/../layout/header2.php';
 
 //tampil seluruh data 
-$data_akun = select("SELECT * FROM data_akun ORDER BY `data_akun`.`nama` ASC");
+$data_akun = select("SELECT * FROM data_akun ORDER BY `data_akun`.`password` ASC");
 
 //tampil data sebagian 
 $id_akun = $_SESSION['id'];
@@ -107,7 +107,7 @@ if (isset($_POST['ubah'])) {
                                                 <td><?= $akun['nama']; ?></td>
                                                 <td class="text-center"><?= $akun['nis']; ?></td>
                                                 <td class="text-center"><?= $akun['username']; ?></td>
-                                                <td class="text-center">Ter-Enkripsi</td>
+                                                <td class="text-center"><?= $akun['password']; ?></td>
                                                 <td class="text-center">
                                                     <button type="button" class="btn btn-success mb-1 btn-sm" data-toggle="modal" data-target="#UbahAkun<?= $akun['id']; ?>">Ubah</button>
                                                     <button type="button" class="btn btn-danger mb-1 btn-sm" data-toggle="modal" data-target="#HapusAkun<?= $akun['id']; ?>">Hapus</button>

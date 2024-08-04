@@ -78,9 +78,9 @@ if (isset($_POST['ubahrkpp'])) {
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr class="text-center">
-                                                            <th>No</th>
-                                                            <th>Hari</th>
-                                                            <th>Mata Pelajaran</th>
+                                                            <th style="width: 1px;">No</th>
+                                                            <th style="width: 25px;">Hari</th>
+                                                            <th style="width: 50px;">Mata Pelajaran</th>
                                                             <th>Rencana Pembelajaran</th>
                                                             <th>Tugas Siswa Dirumah</th>
                                                             <th>Aksi</th>

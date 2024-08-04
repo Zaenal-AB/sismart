@@ -138,16 +138,7 @@ if (isset($_POST['ubah'])) {
                                         <!-- Menampilkan seluruh sebagian/siswa  -->
                                     <?php elseif ($_SESSION['level'] == 2) : ?>
                                         <?php
-                                        // Variabel penghitung
-                                        $counter = 0;
-
-                                        // Maksimal data yang ditampilkan
-                                        $max_data = 20;
-
-                                        foreach ($data_byguru as $murojaah) :                                            // Memeriksa apakah batas sudah tercapai
-                                            if ($counter >= $max_data) {
-                                                break;
-                                            }
+                                        foreach ($data_byguru as $murojaah) :
                                         ?>
                                             <tr>
                                                 <td class="text-center align-middle"><?= $no++; ?></td>

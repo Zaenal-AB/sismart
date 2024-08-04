@@ -47,7 +47,7 @@ include __DIR__ . '/../layout/header2.php';
                         <div class="info-box-content">
                             <span class="info-box-text">Guru & Karyawan</span>
                             <span class="info-box-number">
-                                30
+                                28
                             </span>
                         </div>
                     </div>
