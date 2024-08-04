@@ -168,8 +168,10 @@ $html .= '
                     <br>
                     <br>
                     <p class="tex">  </p>
-                </td>
+                </td>';
+foreach ($data as $row) {
 
+    $html .= '
                 <td class="col2">
                     <p class="tex">Mengetahui</p>
                     <p class="tex">Wakil Kepala Sekolah Bidang Kurikulum</p>
@@ -186,12 +188,12 @@ $html .= '
                 </td>
 
                 <td class="col2">
-                    <p class="tex">Mataram, 8 Agustus 2024</p>
+                    <p class="tex">' . $row['tanggal'] . '</p>
                     <p class="tex">Wali Kelas VII-A</p>
                     <div>
                         <img class="block-image" style="height: 50px;" src="ttd1.png" alt="ttd">
                     </div>
-                    <p class="tex">M. Zakaria</p>
+                    <p class="tex">M. Zakaria, S.Pd</p>
                 </td>
                 <td class="col1">
                     <p class="tex"> </p>
@@ -201,8 +203,9 @@ $html .= '
                 </td>
             </tr>
         </table>
-    </div>
-
+    </div>';
+}
+$html .= '
 </body>
 </html>';
 
