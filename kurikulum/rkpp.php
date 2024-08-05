@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION["login"])) {
     echo "<script>
     alert('Silahkan Anda Login Dahulu');
-    document.location.href = 'login.php';
+    document.location.href = '../login.php';
          </script>";
     exit;
 }
@@ -16,7 +16,7 @@ if (!isset($_SESSION["login"])) {
 if ($_SESSION["level"] == 1 or $_SESSION["level"] == 2) {
     echo "<script>
     alert ('Anda tidak punya akses');
-    document.location.href = 'login.php';
+    document.location.href = '../login.php';
          </script>";
     exit;
 }

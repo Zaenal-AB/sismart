@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION["login"])) {
     echo "<script>
     alert('Silahkan Anda Login Dahulu');
-    document.location.href = 'login.php';
+    document.location.href = '../login.php';
          </script>";
     exit;
 }
