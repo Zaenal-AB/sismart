@@ -112,7 +112,7 @@ if (isset($_POST['tambah'])) {
                                                 <td><?= $keterlambatan['tindakan']; ?></td>
                                                 <td class="text-center">
                                                     <!-- <a href="ubah-keterlambatan.php?id=<?= $Keterlambatan['id']; ?>" class="btn btn-success">Ubah</a> -->
-                                                    <a href="hapus-keterlambatan.php?id=<?= $keterlambatan['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin Data barang Akan DiHapus?') ">Hapus</a>
+                                                    <a href="hapus-keterlambatan.php?id=<?= $keterlambatan['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin Data Keterlambatan Akan DiHapus?') ">Hapus</a>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php else : ?>

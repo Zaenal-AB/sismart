@@ -4,7 +4,7 @@ session_start();
 
 // membatasi halaman sudah login
 if (isset($_SESSION['login'])) {
-    header('Location: dashboard.php');
+    header('Location: dashboard/dashboard.php');
     exit();
 }
 

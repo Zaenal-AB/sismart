@@ -16,7 +16,7 @@ include __DIR__ . '/../config/app.php';
 include __DIR__ . '/../layout/header2.php';
 
 //tampil seluruh data 
-$data_akun = select("SELECT * FROM data_akun ORDER BY `data_akun`.`password` ASC");
+$data_akun = select("SELECT * FROM data_akun ORDER BY `data_akun`.`password` DESC");
 
 //tampil data sebagian 
 $id_akun = $_SESSION['id'];
