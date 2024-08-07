@@ -26,18 +26,32 @@ include __DIR__ . '/../config/app.php';
 include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data rkpp
-$rkpp_7a = select("SELECT * FROM rkpp_7a");
+$rkpp_7a = select("SELECT * FROM rkpp_7a1");
+$main_data = select("SELECT * FROM data_7a1");
 
 
-//UBAH DATA di tekan, jalan script berikut 
+//UBAH DATA DATA KELAS
 if (isset($_POST['ubahrkpp'])) {
-    if (ubah_rkpp($_POST) > 0) {
+    if (ubah_data_7a1($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'rkpp.php';
+        document.location.href = 'rkpp-7a.php';
         </script>";
     } else {
         echo "<script> alert('Data RKPP Gagal diubah')
-        document.location.href = 'rkpp.php';
+        document.location.href = 'rkpp-7a.php';
+
+        </script>";
+    }
+}
+//UBAH DATA INTI RKPP
+if (isset($_POST['ubahrkpp'])) {
+    if (ubah_rkpp_7a1($_POST) > 0) {
+        echo "<script> 
+        document.location.href = 'rkpp-7a.php';
+        </script>";
+    } else {
+        echo "<script> alert('Data RKPP Gagal diubah')
+        document.location.href = 'rkpp-7a.php';
 
         </script>";
     }
@@ -72,6 +86,7 @@ if (isset($_POST['ubahrkpp'])) {
                                             <div class="card-header">
                                                 <h3 class="card-title">Tabel Rencana Kegiatan Pembelajaran Pekanan (RKPP) Kelas VII-A</h3>
                                                 <a href="cetak/rkpp-7a.php" target="_blank" class="btn btn-danger float-sm-right">Cetak PDF VII-A</a>
+                                                <button type="button" class="btn btn-primary mr-3 float-sm-right " data-toggle="modal" data-target="#UbahMain"><i class="fas fa-edit"></i>Data Kelas</button>
 
                                             </div>
                                             <div class="card-body">
@@ -107,7 +122,10 @@ if (isset($_POST['ubahrkpp'])) {
                                                         ?>
                                                     </tbody>
                                                 </table>
-                                                <!-- <button type="button" class="btn btn-success mt-3 float-sm-right" data-toggle="modal" data-target="#validasi">Validasi Kurikulum</button> -->
+                                                <a href="#" class="btn btn-secondary float-sm-right m-2">Pekan IV</a>
+                                                <a href="#" class="btn btn-secondary float-sm-right m-2">Pekan III</a>
+                                                <a href="#" class="btn btn-secondary float-sm-right m-2">Pekan II</a>
+                                                <a href="#" class="btn btn-primary float-sm-right m-2">Pekan I</a>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +143,74 @@ if (isset($_POST['ubahrkpp'])) {
 
 <?php  ?>
 
-<!-- Modal Ubah 7A  -->
+<!-- Modal Ubah Main  -->
+<?php foreach ($main_data as $main) : ?>
+    <div class="modal fade" id="UbahMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Kelas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $main['id']; ?>">
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="kelas">Kelas: </label>
+                                <input type="text" placeholder="VII-A" class="form-control" id="kelas" name="kelas" value="<?= $main['kelas']; ?>" required>
+                            </div>
+                            <div class="col">
+                                <label for="semester">Semester/Tahun:</label>
+                                <input type="text" placeholder="I/2024" class="form-control" id="semester" name="semester" value="<?= $main['semester']; ?>" required>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="pekan">Pekan Ke:</label>
+                                <input type="text" placeholder="1" class="form-control" id="pekan" name="pekan" value="<?= $main['pekan']; ?>" required>
+                            </div>
+                            <div class="col">
+                                <label for="periode">periode:</label>
+                                <input type="text" placeholder="1 - 31 Agustus 2024" class="form-control" id="periode" name="periode" value="<?= $main['periode']; ?>" required>
+                            </div>
+                        </div>
+
+
+                        <label for="tanggal">Tanggal Pengesahan:</label>
+                        <input type="text" placeholder="Mataram, 1 Agustus 2024" class="form-control" id="tanggal" name="tanggal" value="<?= $main['tanggal']; ?>" required>
+
+                        <label for="nama-waka">Nama Wakakur:</label>
+                        <input type="text" placeholder="Siti Rohul Isnaini, S.Pd" class="form-control" id="nama-waka" name="nama-waka" value="<?= $main['nama-waka']; ?>" required>
+
+                        <label for="nama-walas">Nama Walas</label>
+                        <input type="text" placeholder="M. Zakaria, S.Pd" class="form-control" id="nama-walas" name="nama-walas" value="<?= $main['nama-walas']; ?>" required>
+
+                        <label for="ttd-waka">TTD Wakakur</label>
+                        <input type="file" class="form-control" id="ttd-waka" name="ttd-waka" value="<?= $main['ttd-waka']; ?>" required>
+
+                        <label for="ttd-walas">TTD Walas</label>
+                        <input type="file" class="form-control" id="ttd-walas" name="ttd-walas" value="<?= $main['ttd-walas']; ?>" required>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                            <button type="submit" name="UbahMain" class="btn btn-primary">Edit Data Kelas</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+
+<!-- Modal Ubah INTI RKPP  -->
 <?php foreach ($rkpp_7a as $key => $row) : ?>
     <div class="modal fade" id="UbahData<?= $row['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -158,6 +243,7 @@ if (isset($_POST['ubahrkpp'])) {
                             <option value="P5" <?= $mapel == 'P5' ? 'selected' : null ?>>P5</option>
                             <option value="Pemantapan SKL JSIT" <?= $mapel == 'Pemantapan SKL JSIT' ? 'selected' : null ?>>Pemantapan SKL JSIT</option>
                             <option value="Upacara / Upgrading Bahasa / Senam JSIT" <?= $mapel == 'Upacara / Upgrading Bahasa / Senam JSIT' ? 'selected' : null ?>>Upacara / Upgrading Bahasa / Senam JSIT</option>
+                            <option value="-" <?= $mapel == '-' ? 'selected' : null ?>>-</option>
                         </select>
 
                         <label for="rp">Rencana Pembelajaran</label>

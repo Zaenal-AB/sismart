@@ -220,17 +220,36 @@ date_default_timezone_set('Asia/Makassar');
                             </a>
                         </li> -->
                         <!-- / END SIDEBAR AL QUR'AN -->
+                        <?php if ($_SESSION['level'] == 3) : ?>
 
                         <!-- START KURIKULUM -->
                         <li class="nav-header">Kurikulum</li>
-                        <li class="nav-item">
-                            <a href="../kurikulum/rkpp.php" class="nav-link">
-                                <i class="nav-icon far fa-solid fa-house"></i>
-                                <p>RKPP</p>
+                                              <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-shapes"></i>
+                                <p>RKPP
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../Kurikulum/rkpp-7a.php" class="nav-link">
+                                        <i class="nav-icon far fa-circle text-danger"></i>
+                                        <p>RKPP-7A</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../Kurikulum/rkpp-7b1.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>RKPP-7B</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <!-- END KURIKULUM -->
+                        <?php endif; ?>
+
 
                         <!-- START SIDEBAR REWARD & PUNISHMENT -->
 

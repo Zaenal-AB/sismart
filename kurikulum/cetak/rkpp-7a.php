@@ -3,8 +3,8 @@
 
 include __DIR__ . '/../../config/app.php';
 include __DIR__ . '/../../vendor/autoload.php';
-$rkpp_7a = select("SELECT * FROM rkpp_7a");
-$data = select("SELECT * FROM pdf_rkpp7a");
+$rkpp_7a = select("SELECT * FROM rkpp_7a1");
+$data = select("SELECT * FROM data_7a1");
 
 $mpdf = new \Mpdf\Mpdf();
 
@@ -178,7 +178,7 @@ foreach ($data as $row) {
                     <div>
                         <img style="height: 50px;" src="ttd1.png" alt="ttd">
                     </div>
-                    <p class="tex">Siti Rohul Isnaini, S.Pd</p>
+                    <p class="tex">' . $row['nama-waka'] . '</p>
                 </td>
                 <td class="col1">
                     <p class="tex"> </p>
@@ -193,7 +193,7 @@ foreach ($data as $row) {
                     <div>
                         <img class="block-image" style="height: 50px;" src="ttd1.png" alt="ttd">
                     </div>
-                    <p class="tex">M. Zakaria, S.Pd</p>
+                    <p class="tex">' . $row['nama-walas'] . '</p>
                 </td>
                 <td class="col1">
                     <p class="tex"> </p>
