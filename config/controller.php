@@ -514,39 +514,3 @@ function ubah_kelas($post)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
-
-// =========================== RKPP 7A ==================== //
-
-//fungsi mengubah DATA KELAS
-function ubah_data_7a1($post)
-{
-    // global $conn;
-
-    // $id         = htmlspecialchars($post['id']);
-    // $mapel      = htmlspecialchars($post['mapel']);
-    // $rp         = htmlspecialchars($post['rp']);
-    // $ts         = htmlspecialchars($post['ts']);
-
-
-    // $query      = "UPDATE data_7a1 SET mapel='$mapel', rp='$rp', ts='$ts'  WHERE id = '$id'";
-
-    // mysqli_query($conn, $query);
-    // return mysqli_affected_rows($conn);
-}
-
-//fungsi mengubah DATA RKPP
-function ubah_rkpp_7a1($post)
-{
-    global $conn;
-
-    $id         = htmlspecialchars($post['id']);
-    $mapel      = htmlspecialchars($post['mapel']);
-    $rp         = htmlspecialchars($post['rp']);
-    $ts         = htmlspecialchars($post['ts']);
-
-
-    $query      = "UPDATE rkpp_7a1 SET mapel='$mapel', rp='$rp', ts='$ts'  WHERE id = '$id'";
-
-    mysqli_query($conn, $query);
-    return mysqli_affected_rows($conn);
-}

@@ -26,32 +26,32 @@ include __DIR__ . '/../config/app.php';
 include __DIR__ . '/../layout/header2.php';
 
 //Menampilkan Data rkpp
-$rkpp_7a = select("SELECT * FROM rkpp_7a1");
-$main_data = select("SELECT * FROM data_7a1");
+$rkpp_7a4 = select("SELECT * FROM rkpp_7a4");
+$main_data = select("SELECT * FROM data_7a4");
 
 
 //UBAH DATA KELAS
 if (isset($_POST['UbahMain'])) {
-    if (ubah_data_7a1($_POST) > 0) {
+    if (ubah_data_7a4($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'rkpp-7a.php';
+        document.location.href = 'rkpp-7a4.php';
         </script>";
     } else {
         echo "<script> alert('Data RKPP Gagal diubah')
-        document.location.href = 'rkpp-7a.php';
+        document.location.href = 'rkpp-7a4.php';
 
         </script>";
     }
 }
 //UBAH DATA INTI RKPP
 if (isset($_POST['ubahrkpp'])) {
-    if (ubah_rkpp_7a1($_POST) > 0) {
+    if (ubah_rkpp_7a4($_POST) > 0) {
         echo "<script> 
-        document.location.href = 'rkpp-7a.php';
+        document.location.href = 'rkpp-7a4.php';
         </script>";
     } else {
         echo "<script> alert('Data RKPP Gagal diubah')
-        document.location.href = 'rkpp-7a.php';
+        document.location.href = 'rkpp-7a4.php';
 
         </script>";
     }
@@ -84,8 +84,8 @@ if (isset($_POST['ubahrkpp'])) {
                                     <div class="col-md-12">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h3 class="card-title">RKPP Kelas VII-A Pekan Ke-1</h3>
-                                                <a href="cetak/rkpp-7a.php" target="_blank" class="btn btn-danger float-sm-right">Cetak PDF VII-A</a>
+                                                <h3 class="card-title">RKPP Kelas VII-A Pekan Ke-4</h3>
+                                                <a href="cetak/rkpp-7a4.php" target="_blank" class="btn btn-danger float-sm-right">Cetak PDF VII-A</a>
                                                 <button type="button" class="btn btn-primary mr-3 float-sm-right " data-toggle="modal" data-target="#UbahMain"><i class="fas fa-edit"></i>Data Kelas</button>
 
                                             </div>
@@ -107,7 +107,7 @@ if (isset($_POST['ubahrkpp'])) {
                                                         $current_hari = "";
                                                         $rowspan_count = 6; // Jumlah baris per hari
 
-                                                        foreach ($rkpp_7a as $key => $row) {
+                                                        foreach ($rkpp_7a4 as $key => $row) {
                                                             echo '<tr class="text-center">';
                                                             if ($key % $rowspan_count == 0) {
                                                                 echo '<td rowspan="' . $rowspan_count . '">' . $no++ . '</td>';
@@ -122,10 +122,10 @@ if (isset($_POST['ubahrkpp'])) {
                                                         ?>
                                                     </tbody>
                                                 </table>
-                                                <a href="rkpp-7a4.php" class="btn btn-secondary float-sm-right m-2">Pekan IV</a>
+                                                <a href="rkpp-7a4.php" class="btn btn-primary float-sm-right m-2">Pekan IV</a>
                                                 <a href="rkpp-7a3.php" class="btn btn-secondary float-sm-right m-2">Pekan III</a>
                                                 <a href="rkpp-7a2.php" class="btn btn-secondary float-sm-right m-2">Pekan II</a>
-                                                <a href="rkpp-7a.php" class="btn btn-primary float-sm-right m-2">Pekan I</a>
+                                                <a href="rkpp-7a.php" class="btn btn-secondary float-sm-right m-2">Pekan I</a>
                                             </div>
                                         </div>
                                     </div>
@@ -211,7 +211,7 @@ if (isset($_POST['ubahrkpp'])) {
 
 
 <!-- Modal Ubah INTI RKPP  -->
-<?php foreach ($rkpp_7a as $key => $row) : ?>
+<?php foreach ($rkpp_7a4 as $key => $row) : ?>
     <div class="modal fade" id="UbahData<?= $row['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

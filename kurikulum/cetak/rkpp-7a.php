@@ -173,12 +173,12 @@ foreach ($data as $row) {
 
     $html .= '
                 <td class="col2">
-                    <p class="tex">Mengetahui</p>
+                    <p class="tex">Mengetahui,</p>
                     <p class="tex">Wakil Kepala Sekolah Bidang Kurikulum</p>
                     <div>
-                        <img style="height: 50px;" src="ttd1.png" alt="ttd">
+                        <img style="height: 50px;" src="../ttd/' . $row['ttd_waka'] . '" alt="ttd">
                     </div>
-                    <p class="tex">' . $row['nama-waka'] . '</p>
+                    <p class="tex">' . $row['nama_waka'] . '</p>
                 </td>
                 <td class="col1">
                     <p class="tex"> </p>
@@ -191,9 +191,9 @@ foreach ($data as $row) {
                     <p class="tex">' . $row['tanggal'] . '</p>
                     <p class="tex">Wali Kelas VII-A</p>
                     <div>
-                        <img class="block-image" style="height: 50px;" src="ttd1.png" alt="ttd">
+                        <img class="block-image" style="height: 50px;" src="../ttd/' . $row['ttd_walas'] . '" alt="ttd">
                     </div>
-                    <p class="tex">' . $row['nama-walas'] . '</p>
+                    <p class="tex">' . $row['nama_walas'] . '</p>
                 </td>
                 <td class="col1">
                     <p class="tex"> </p>
@@ -210,4 +210,4 @@ $html .= '
 </html>';
 
 $mpdf->WriteHTML($html);
-$mpdf->Output('RencanaPembelajaran.pdf', \Mpdf\Output\Destination::INLINE);
+$mpdf->Output('RKPP VII-A.pdf', \Mpdf\Output\Destination::INLINE);
