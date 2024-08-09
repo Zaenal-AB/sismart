@@ -58,7 +58,7 @@ include __DIR__ . '/../layout/header2.php';
 
                         <div class="info-box-content">
                             <span class="info-box-text">Siswa</span>
-                            <span class="info-box-number">208</span>
+                            <span class="info-box-number">210</span>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ include __DIR__ . '/../layout/header2.php';
 
     <!-- chat start -->
     <!-- Main row -->
-    <div class="row">
+    <!-- <div class="row">
         <section class="col-lg-7 connectedSortable">
             <div class="card direct-chat direct-chat-primary">
                 <div class="card-header">
@@ -120,7 +120,7 @@ include __DIR__ . '/../layout/header2.php';
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <!-- tulisan chat di sini -->
                 <!-- <div class="card-body">
                     <div class="direct-chat-messages">
@@ -160,7 +160,7 @@ include __DIR__ . '/../layout/header2.php';
 
                     </div>
                 </div> -->
-                <?php if ($_SESSION['level'] == 3) : ?>
+                <!-- <?php if ($_SESSION['level'] == 3) : ?>
                     <div class="card-footer">
                         <form action="#" method="post">
                             <div class="input-group">
@@ -171,7 +171,7 @@ include __DIR__ . '/../layout/header2.php';
                             </div>
                         </form>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> -->
 
             </div>
             <!--/.direct-chat -->

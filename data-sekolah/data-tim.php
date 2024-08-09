@@ -12,7 +12,7 @@ if (!isset($_SESSION["login"])) {
 }
 
 // membatasi halaman sesuai user login
-if ($_SESSION["level"] == 1 or $_SESSION["level"] == 2 ) {
+if ($_SESSION["level"] == 1) {
     echo "<script>
     alert ('Anda tidak punya akses');
     document.location.href = 'login.php';
