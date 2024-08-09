@@ -15,7 +15,7 @@ if (!isset($_SESSION["login"])) {
 if ($_SESSION["level"] == 1) {
     echo "<script>
     alert ('Anda tidak punya akses');
-    document.location.href = 'login.php';
+    document.location.href = '../login.php';
          </script>";
     exit;
 }

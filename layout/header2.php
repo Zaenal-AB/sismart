@@ -181,12 +181,12 @@ date_default_timezone_set('Asia/Makassar');
                         <?php endif; ?>
 
                         <li class="nav-header">Al-Qur'an</li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="../al-quran/tilawah.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-book-open-reader"></i>
                                 <p> Tilawah </p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="../al-quran/tahsin.php" class="nav-link">
                                 <i class="nav-icon far fa-solid fa-book-open-reader"></i>
@@ -336,9 +336,9 @@ date_default_timezone_set('Asia/Makassar');
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="data-point-siswa.php" class="nav-link">
+                                    <a href="../kesiswaan/tancap.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Rekap Point Siswa</p>
+                                        <p>TANCAP</p>
                                     </a>
                                 </li>
                             </ul>
