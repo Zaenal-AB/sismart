@@ -238,6 +238,7 @@ if (isset($_POST['ubahrkpp'])) {
                             <option value="PPKn" <?= $mapel == 'PPKn' ? 'selected' : null ?>>PPKn</option>
                             <option value="Informatika" <?= $mapel == 'Informatika' ? 'selected' : null ?>>Informatika</option>
                             <option value="PJOK" <?= $mapel == 'PJOK' ? 'selected' : null ?>>PJOK</option>
+                            <option value="Prakarya" <?= $mapel == 'Prakarya' ? 'selected' : null ?>>Prakarya</option>
                             <option value="Bahasa Arab (Muatan Lokal)" <?= $mapel == 'Bahasa Arab (Muatan Lokal)' ? 'selected' : null ?>>Bahasa Arab (Muatan Lokal)</option>
                             <option value="Bimbingan Konseling (BK)" <?= $mapel == 'Bimbingan Konseling (BK)' ? 'selected' : null ?>>Bimbingan Konseling (BK)</option>
                             <option value="P5" <?= $mapel == 'P5' ? 'selected' : null ?>>P5</option>
