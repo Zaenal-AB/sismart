@@ -220,7 +220,7 @@ date_default_timezone_set('Asia/Makassar');
                             </a>
                         </li> -->
                         <!-- / END SIDEBAR AL QUR'AN -->
-                        <?php if ($_SESSION['level'] == 3) : ?>
+                        <?php if ($_SESSION['level'] == 3 or $_SESSION['level'] == 2) : ?>
 
                         <!-- START KURIKULUM -->
                         <li class="nav-header">Kurikulum</li>
