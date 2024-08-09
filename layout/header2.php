@@ -233,73 +233,73 @@ date_default_timezone_set('Asia/Makassar');
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-7a.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-7a.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-7A</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-7b1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-7b1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-7B</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-7c1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-7c1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-7C</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-7d1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-7d1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-7D</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-8a1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-8a1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-8A</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-8b1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-8b1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-8B</p>
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-8c1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-8c1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-8C</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-8d1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-8d1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-8D</p>
                                     </a>
                                 </li> -->
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-9a1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-9a1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-9A</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-9b1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-9b1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-9B</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-9c1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-9c1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-9C</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../Kurikulum/rkpp-9d1.php" class="nav-link">
+                                    <a href="../kurikulum/rkpp-9d1.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>RKPP-9D</p>
                                     </a>
