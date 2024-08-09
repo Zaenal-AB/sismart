@@ -49,7 +49,7 @@ include __DIR__ . '/../layout/header2.php';
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <!-- Info boxes -->
+            <!-- RAPAT TIM -->
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-3">
                     <a href="#">
@@ -58,6 +58,43 @@ include __DIR__ . '/../layout/header2.php';
 
                             <div class="info-box-content">
                                 <span class="info-box-text"><b>Hasil Rapat Tim</b></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- RAPAT ELUP -->
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="#">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-primary elevation-1"><i class="far fa-copy"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"><b>Document ELUP</b></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="#">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="far fa-copy"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"><b>Laporan TANCEP</b></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="https://bit.ly/FormlemburNpenugasanGuru">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="far fa-copy"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"><b>Laporan Lembur</b></span>
                             </div>
                         </div>
                     </a>
